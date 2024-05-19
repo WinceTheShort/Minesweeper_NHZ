@@ -10,7 +10,38 @@ FetchContent_Declare(SFML
     GIT_TAG 2.6.x)
 FetchContent_MakeAvailable(SFML)
 
-add_executable(CMakeSFMLProject src/main.cpp)
+add_executable(CMakeSFMLProject src/main.cpp
+        src/Board.cpp
+        src/Board.h
+        src/Button.cpp
+        src/Button.h
+        src/Button.h
+        src/Cell.cpp
+        src/Cell.h
+        src/Cell.h
+        src/Game.cpp
+        src/Game.h
+        src/Game.h
+        src/Slider.cpp
+        src/Slider.h
+        src/Slider.h
+        src/Stepper.cpp
+        src/Stepper.h
+        src/Stepper.h
+        src/CustomDiffState.cpp
+        src/CustomDiffState.h
+        src/DifficultyState.cpp
+        src/DifficultyState.h
+        src/GameState.cpp
+        src/GameState.h
+        src/MainMenuState.cpp
+        src/MainMenuState.h
+        src/MainMenuState.h
+        src/State.cpp
+        src/State.h
+        src/State.h
+        src/StateInterfaces.hpp
+        src/StateInterfaces.hpp)
 target_link_libraries(CMakeSFMLProject PRIVATE sfml-graphics)
 target_compile_features(CMakeSFMLProject PRIVATE cxx_std_17)
 

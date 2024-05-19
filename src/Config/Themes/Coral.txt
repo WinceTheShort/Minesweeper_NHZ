@@ -1,0 +1,5 @@
+Coral
+BtnIdle 0 148 172 255
+BtnHover 0 111 130 255
+BtnActive 0 73 85 255
+Shadow 31 49 52 255
