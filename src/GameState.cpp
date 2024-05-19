@@ -6,6 +6,7 @@
 
 void GameState::initFonts() {
     this->font.loadFromFile("../../src/Resources/minepixel.ttf");
+    int* tmp = new int[10];
 }
 
 void GameState::initKeybinds() {

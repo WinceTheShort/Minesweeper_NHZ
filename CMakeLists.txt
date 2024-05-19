@@ -10,6 +10,45 @@ FetchContent_Declare(SFML
     GIT_TAG 2.6.x)
 FetchContent_MakeAvailable(SFML)
 
+include(CheckCXXCompilerFlag)
+
+option(CPP_WARNINGS_TO_ERRORS "Build with -Werror or equivalent flag. [Default: On]" Yes)
+option(CPP_ENABLE_MEMTRACE "Enable building with memtrace instrumentation. [Default: On]" Yes)
+
+add_library(memtrace STATIC
+        src/memtrace.cpp src/memtrace.h)
+target_compile_features(memtrace PRIVATE cxx_std_98)
+target_compile_definitions(memtrace PUBLIC
+        $<$<BOOL:${CPP_ENABLE_MEMTRACE}>:MEMTRACE>)
+
+add_library(minesweeper OBJECT
+        src/Board.cpp
+        src/Board.h
+        src/Button.cpp
+        src/Button.h
+        src/Cell.cpp
+        src/Cell.h
+        src/CustomDiffState.cpp
+        src/CustomDiffState.h
+        src/DifficultyState.cpp
+        src/DifficultyState.h
+        src/Game.cpp
+        src/Game.h
+        src/GameState.cpp
+        src/GameState.h
+        src/main.cpp
+        src/MainMenuState.cpp
+        src/MainMenuState.h
+        src/Slider.cpp
+        src/Slider.h
+        src/State.cpp
+        src/State.h
+        src/StateInterfaces.hpp
+        src/Stepper.cpp
+        src/Stepper.h
+)
+target_link_libraries(minesweeper PUBLIC memtrace)
+
 add_executable(CMakeSFMLProject src/main.cpp
         src/Board.cpp
         src/Board.h
@@ -41,9 +80,17 @@ add_executable(CMakeSFMLProject src/main.cpp
         src/State.h
         src/State.h
         src/StateInterfaces.hpp
-        src/StateInterfaces.hpp)
+        src/StateInterfaces.hpp
+        src/memtrace.cpp
+        src/memtrace.h
+        src/memtrace.h)
 target_link_libraries(CMakeSFMLProject PRIVATE sfml-graphics)
 target_compile_features(CMakeSFMLProject PRIVATE cxx_std_17)
+
+# Generate warning flags appropriate to the currently used compiler.
+include("${CMAKE_CURRENT_SOURCE_DIR}/generate_warnings.cmake")
+
+
 
 if(WIN32)
     add_custom_command(

@@ -28,6 +28,8 @@
 #include "Slider.h"
 #include "Stepper.h"
 
+#include "memtrace.h"
+
 class State {
 protected:
     std::stack<State*>* states;
