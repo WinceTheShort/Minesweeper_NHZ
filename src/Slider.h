@@ -35,18 +35,39 @@ private:
 
     std::map<std::string, sf::Color>* theme;
 public:
+    ///
+    /// @param x
+    /// @param y
+    /// @param width
+    /// @param font
+    /// @param text String displayed above the slider
+    /// @param fontSize
+    /// @param theme
+    /// @param min min value
+    /// @param max max value
+    /// @param scale
     Slider(float x, float y, float width,
-           sf::Font* font, std::string text, int fontSize,
+           sf::Font* font, const std::string& text, int fontSize,
            std::map<std::string, sf::Color>* theme,
            int min, int max, float scale = 1);
     ~Slider();
 
-    int getValue(); //returns sliders current value
+    /// Returns the sliders current value
+    /// @return value
+    int getValue() const; //returns sliders current value
 
+    /// Changes the slider's theme
+    /// @param theme
     void changeTheme(std::map<std::string, sf::Color>* theme){this->theme = theme;}
-    void changeMax(int newMax); //changes max value
-    void update(sf::Vector2f mousePos); //updates slider
-    void render(sf::RenderTarget* target);  //renders slider
+    /// Changes the maximum value
+    /// @param newMax
+    void changeMax(int newMax);
+    /// Updates the slider
+    /// @param mousePos
+    void update(sf::Vector2f mousePos);
+    /// Renders the slider
+    /// @param target
+    void render(sf::RenderTarget* target);
 };
 
 

@@ -21,16 +21,16 @@ void Board::initBoard() {
 }
 
 void Board::setBoard(sf::Vector2i mousePos) {
-    int starterX, starterY;
+    int starterX = 0, starterY = 0;
     bool firstCellPlaced = false;
 
     //Only performs click if the left mouse button is released on the cell
     if (mousePos.x >= 0 && mousePos.y >= 0 && mousePos.x < diff->columns && mousePos.y < diff->rows){
         if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
-            left = 1;
+            left = true;
         }
     } else if (left != 1){
-        left = 0;
+        left = false;
     }
     if (left == 1 && !sf::Mouse::isButtonPressed(sf::Mouse::Left)){
         if (mousePos.x >= 0 && mousePos.y >= 0 && mousePos.x < diff->columns && mousePos.y < diff->rows){
@@ -39,7 +39,7 @@ void Board::setBoard(sf::Vector2i mousePos) {
             firstCellPlaced = true;
         }
         else{
-            left = 0;
+            left = false;
         }
     }
 
@@ -94,7 +94,7 @@ void Board::setBoard(sf::Vector2i mousePos) {
 
 }
 
-Board::Board(Difficulty* diff, int gridSize, sf::View* view, sf::Texture* cellSprites,std::map<std::string, sf::Color>* theme)
+Board::Board(Difficulty* diff, float gridSize, sf::View* view, sf::Texture* cellSprites,std::map<std::string, sf::Color>* theme)
 : diff(diff), gridSize(gridSize), view(view), cellSprites(cellSprites), goodFlag(0), badFlag(0), time(0),
 gameOverBool(false), started(false), left(false), theme(theme){
     //Allocates the cell matrix
@@ -113,17 +113,20 @@ gameOverBool(false), started(false), left(false), theme(theme){
     initBoard();
 }
 
-Board::Board(Difficulty *diff, int gridSize, sf::View *view, sf::Texture *cellSprites, std::map<std::string, sf::Color> *theme, bool load)
+Board::Board(Difficulty *diff, float gridSize, sf::View *view, sf::Texture *cellSprites, std::map<std::string, sf::Color> *theme, bool load)
 : diff(diff), gridSize(gridSize), view(view), cellSprites(cellSprites), goodFlag(0), badFlag(0),
-  gameOverBool(false), started(true), left(false), theme(theme){
+  gameOverBool(false), started(true), left(false), theme(theme), time(0){
+    //Loads the game parameters from save file
     std::ifstream ifstream("../../src/Config/save.txt");
     ifstream >> time >> diff->columns >> diff->rows >> diff->bombs;
 
+    //Allocates the boardCell 2d array based on game params
     boardCells = new Cell**[diff->columns];
     for (int i = 0; i < diff->columns; ++i) {
         boardCells[i] = new Cell*[diff->rows];
     }
 
+    //Populates the board from the save file
     int type, revealed, flagged;
     for (int i = 0; i < diff->columns; ++i) {
         for (int j = 0; j < diff->rows; ++j) {
@@ -150,9 +153,11 @@ Board::~Board() {
 }
 
 bool Board::checkWinCondition() {
-    if (badFlag == 0 && goodFlag == diff->bombs){ //Checks if all flags are correct
+    //Checks if all flags are correct
+    if (badFlag == 0 && goodFlag == diff->bombs){
         bool done = true;
-        for (int i = 0; i < diff->columns && done; ++i) { //Checks if all cells are either revealed or flagged
+        //Checks if all cells are either revealed or flagged
+        for (int i = 0; i < diff->columns && done; ++i) {
             for (int j = 0; j < diff->rows && done; ++j) {
                 if(!boardCells[i][j]->getFlagged() && !boardCells[i][j]->getRevealed())
                     done = false;
@@ -164,25 +169,34 @@ bool Board::checkWinCondition() {
 }
 
 bool Board::flagged(bool correct) {
-    if (goodFlag + badFlag < diff->bombs){ //If there are still flags left
-        if (correct) goodFlag++; //If good flag was placed
-        else badFlag++; //If bad flag was placed
+    //If there are still flags left
+    if (goodFlag + badFlag < diff->bombs){
+        //If good flag was placed
+        if (correct) goodFlag++;
+        //If bad flag was placed
+        else badFlag++;
         return true;
     }
+    //If there were no remaining flags
     return false;
 }
 
 void Board::unflagged(bool correct) {
-    if (correct) goodFlag--; //If good flag was removed
-    else badFlag--; //If bad flag was removed
+    //If good flag was removed
+    if (correct) goodFlag--;
+    //If bad flag was removed
+    else badFlag--;
 }
 
 int Board::checkSurroundings(int x, int y, int forWhat) {
     int sum = 0;
+    //Checks the surrounding 8 cells for given type
     for (int i = x-1; i <= x+1; ++i) {
         for (int j = y-1; j <= y+1; ++j) {
             if (validCoords(i, j)){
+                //Special condition for checking flags
                 if (forWhat == FLAG && boardCells[i][j]->getFlagged()) sum++;
+                //Chacks any other types
                 else if (boardCells[i][j]->getType() == forWhat) sum++;
             }
         }
@@ -194,7 +208,18 @@ int Board::getRemainigFlagNum() {
     return diff->bombs - goodFlag - badFlag;
 }
 
+void Board::revealBombs()
+{
+    for (int i = 0; i < diff->columns; ++i) {
+        for (int j = 0; j < diff->rows; ++j) {
+            if(boardCells[i][j]->getType() == BOMB && !boardCells[i][j]->getRevealed())
+                boardCells[i][j]->reveal(this);
+        }
+    }
+}
+
 void Board::revealSurroundings(int x, int y) {
+    //Calls reveal on the surrounding 8 cells
     for (int i = x-1; i <= x+1; ++i) {
         for (int j = y-1; j <= y+1; ++j) {
             if (validCoords(i, j) && !(i == x && j == y))
@@ -204,16 +229,20 @@ void Board::revealSurroundings(int x, int y) {
 }
 
 void Board::updateBoard(sf::Vector2i mousePosGrid) {
-    if (started){ //If board was set it updates the cells
+    //If board was set it updates the cells
+    if (started){
         for (int i = 0; i < diff->columns; ++i) {
             for (int j = 0; j < diff->rows; ++j) {
                 boardCells[i][j]->update(mousePosGrid, this);
             }
         }
-    } else setBoard(mousePosGrid); //Else it sets the board
+    }
+    //Otherwise it sets the board
+    else setBoard(mousePosGrid);
 }
 
 void Board::drawBoard(sf::RenderTarget *target) {
+    //Calls all of the cells draw function
     target->draw(boardBackground);
     for (int i = 0; i < diff->columns; ++i) {
         for (int j = 0; j < diff->rows; ++j) {
@@ -223,6 +252,7 @@ void Board::drawBoard(sf::RenderTarget *target) {
 }
 
 void Board::saveGame() {
+    //Saves the game into the save file
     std::ofstream of("../../src/Config/save.txt");
     of << time << " " << diff->columns << " " << diff->rows << " " << diff->bombs << std::endl;
     for (int i = 0; i < diff->columns; ++i) {

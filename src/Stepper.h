@@ -39,18 +39,35 @@ private:
     int themeIndex;
 
 public:
+    /// Stepper constructor
+    /// @param x
+    /// @param y
+    /// @param width
+    /// @param height
+    /// @param outlineThickness
+    /// @param shadowSize
+    /// @param colorThemes pointer to the color themes map
+    /// @param font
+    /// @param fontSize
+    /// @param textShadowSize
+    /// @param activeTheme name of the active theme
     Stepper(float x, float y, float width, float height,float outlineThickness, float shadowSize = 0,
             std::map<std::string, std::map<std::string, sf::Color>> *colorThemes = nullptr,
-           sf::Font* font = nullptr, int fontSize = 0, float textShadowSize = 0,
-           std::string *activeTheme = nullptr);
+            sf::Font* font = nullptr, int fontSize = 0, float textShadowSize = 0,
+            std::string *activeTheme = nullptr);
     ~Stepper();
 
     //Functions
-    void changeTheme(std::map<std::string, std::map<std::string, sf::Color>> *colorThemes){this->colorThemes = colorThemes;}
+    /// Increments the stepper
     void stepRight();
+    /// Decrements the stepper
     void stepLeft();
-    void update(sf::Vector2f mousePos); //updates stepper
-    void render(sf::RenderTarget* target); //renders stepper
+    /// Updates the stepper
+    /// @param mousePos
+    void update(sf::Vector2f mousePos);
+    /// Renders the stepper
+    /// @param target
+    void render(sf::RenderTarget* target);
 };
 
 

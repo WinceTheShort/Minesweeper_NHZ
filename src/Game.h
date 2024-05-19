@@ -8,7 +8,6 @@
 #include "MainMenuState.h"
 
 class Game {
-private:
     //Variables
     sf::RenderWindow* window;
     sf::Event event;

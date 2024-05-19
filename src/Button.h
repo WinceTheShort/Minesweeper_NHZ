@@ -36,18 +36,40 @@ private:
     std::map<std::string, sf::Color>* theme;
 
 public:
+    /// Button constructor
+    /// @param x
+    /// @param y
+    /// @param width
+    /// @param height
+    /// @param outlineThickness
+    /// @param shadowSize
+    /// @param theme active theme
+    /// @param font
+    /// @param text displayed text
+    /// @param fontSize
+    /// @param textShadowSize
+    /// @param texture pointer to texture
+    /// @param btnId texture id on spritesheet
     Button(float x, float y, float width, float height,float outlineThickness, float shadowSize = 0,
            std::map<std::string, sf::Color>* theme = nullptr,
-            sf::Font* font = nullptr, std::string text = "", int fontSize = 0, float textShadowSize = 0,
+           sf::Font* font = nullptr, std::string text = "", int fontSize = 0, float textShadowSize = 0,
            sf::Texture* texture = nullptr, int btnId =0);
     ~Button();
 
     //Accessors
+    /// Returns true it the button is pressed
+    /// @return pressed
     const bool isPressed(); //checks if button is pressed
 
     //Functions
+    /// Changes the buttons theme to the current one
+    /// @param theme
     void changeTheme(std::map<std::string, sf::Color>* theme){this->theme = theme;}
-    void update(sf::Vector2f mousePos); //updates button
+    /// Updates the button
+    /// @param mousePos
+    void update(sf::Vector2f mousePos);
+    /// Renders the button
+    /// @param target
     void render(sf::RenderTarget* target); //renders button
 
 };

@@ -11,11 +11,13 @@ Button::Button(float x, float y, float width, float height,float outlineThicknes
     this->buttonState = 0;
     this->buttonStateS = "BtnIdle";
 
+    //Initializes the buttons background's (shape) parameters
     this->shape.setSize(sf::Vector2f(width, height));
     this->shape.setPosition(sf::Vector2f(x,y));
     this->shape.setOutlineColor(sf::Color::Black);
     this->shape.setOutlineThickness(outlineThickness);
 
+    //Initializes the button's shadow's parameters if its value is not 0
     this->shadowSize = shadowSize;
     if(this->shadowSize != 0){
         this->shadow.setSize(sf::Vector2f(width, height));
@@ -26,20 +28,19 @@ Button::Button(float x, float y, float width, float height,float outlineThicknes
     }
 
 
+    //Initializes the buttons text and its shadow if there is no texture
     if (btnTexture == nullptr){
-
         this->text.setFont(*this->font);
         this->text.setString(text);
         this->text.setFillColor(sf::Color::Black);
         this->text.setCharacterSize(fontSize);
         this->text.setPosition(sf::Vector2f(this->shape.getPosition().x + this->shape.getSize().x/2 - this->text.getGlobalBounds().width/2,
                                             this->shape.getPosition().y + this->shape.getSize().y/2 - this->text.getGlobalBounds().height/2));
-        textShadow.setFont(*this->font);
-        textShadow.setCharacterSize(fontSize);
-        textShadow.setString(text);
+        textShadow = this->text;
         textShadow.setFillColor(theme->at("Shadow"));
         textShadow.setPosition(sf::Vector2f(this->text.getPosition().x + textShadowSize, this->text.getPosition().y + textShadowSize));
     } else {
+        //Initializes the texture if it exists
         shape.setTexture(btnTexture);
         shape.setTextureRect(sf::IntRect(btnId*12,0,12,12));
     }
@@ -63,6 +64,7 @@ const bool Button::isPressed() {
 
 
 void Button::update(const sf::Vector2f mousePos) {
+    //Only registers buttonpress iff its clicked and released in the buttons bounds
     if (this->shape.getGlobalBounds().contains(mousePos)){
         this->buttonStateS = "BtnHover";
         if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
@@ -83,6 +85,7 @@ void Button::update(const sf::Vector2f mousePos) {
         }
     }
 
+    //Sets the fill color to the current pressed state
     this->shape.setFillColor(this->theme->at(buttonStateS));
 }
 

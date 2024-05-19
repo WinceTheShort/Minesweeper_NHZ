@@ -118,8 +118,11 @@ void GameState::checkEndGameCondition() {
     if (board->checkWinCondition()){ //If all bombs are flagged and cells are revealed
         win = true;
         gameEnded = true;
-    } else if (board->gameOver()) //If a bomb is clicked
+    } else if (board->gameOver())//If a bomb is clicked
+    {
         gameEnded = true;
+        board->revealBombs();
+    }
 }
 
 void GameState::handleInput(const float &dt) {
@@ -179,7 +182,7 @@ void GameState::handleButtons() { //Updates and handles buttons
     }
 
     //Save
-    if (this->buttons["SAVE"]->isPressed()){
+    if (this->buttons["SAVE"]->isPressed() && !gameEnded){
         board->setTime((int)timerClock.getElapsedTime().asSeconds() + clock);
         board->saveGame();
     }
@@ -224,14 +227,15 @@ void GameState::update(const float &dt) {
     this->updateButtons();
     this->handleInput(dt);
     updateBombCounter();
-    updateClock();
+    if (!gameEnded)
+        updateClock();
 
     //Disables board interaction if mouse is not in board, is over ui elements or the game is over
     if (mousePosWindow.y > 120 && board->boardBackground.getGlobalBounds().contains(mousePosView) && !gameEnded)
         board->updateBoard(mousePosGrid);
 }
 
-void GameState::render(sf::RenderTarget *target) {
+void GameState::render(sf::RenderTarget *target = nullptr) {
     if (!target)
         target= this->window;
 

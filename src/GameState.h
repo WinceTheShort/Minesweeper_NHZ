@@ -9,7 +9,6 @@
 
 
 class GameState : public iButton{
-private:
     //Variables
     sf::RectangleShape backgroundColor, backgroundBorder, uiBackground;
     sf::Texture buttonSprites, cellSprites;
@@ -38,41 +37,48 @@ private:
     /// Loads fonts from files
     void initFonts();
     /// Initializes the keybinds map
-    void initKeybinds();
+    void initKeybinds() override;
     /// Creates the buttons
-    void initButtons();
+    void initButtons() override;
 public:
+    /// Game state constructor
+    /// @param window
+    /// @param supportedKeys
+    /// @param states pointer to the states stack
+    /// @param difficulty current difficulty
+    /// @param theme active theme
+    /// @param load
     GameState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys, std::stack<State*>* states,
               Difficulty *difficulty, std::map<std::string, sf::Color>* theme, bool load = false);
-    virtual ~GameState();
+    ~GameState() override;
 
     //Functions
     /// Performs actions needed before exiting the state
-    void endState();
+    void endState() override;
     /// Checks if the end game conditions are met and sets the win and end bool accordingly
     void checkEndGameCondition();
 
     /// Handles inputs
     /// @param dt
-    void handleInput(const float& dt);
+    void handleInput(const float& dt) override;
     /// Performs actions when buttons are pressed
-    void handleButtons();
+    void handleButtons() override;
     /// Updates the mouse positions
-    void updateMousePositions();
+    void updateMousePositions() override;
     /// Updates the timer
     void updateClock();
     /// Updates the bomb counter
     void updateBombCounter();
     /// Updates the state
     /// @param dt
-    void update(const float& dt);
+    void update(const float& dt) override;
     /// Renders the state elements to given target
     /// @param target
-    void render(sf::RenderTarget* target = nullptr);    //Renders state elements, takes sf::RenderTarget*
+    void render(sf::RenderTarget* target) override;
 
-    /// Renders the debug window
+    /// Renders the debug panel
     /// @param target
-    void renderDebug(sf::RenderTarget* target){
+    void renderDebug(sf::RenderTarget* target) override{
         std::stringstream ss;
         sf::Text mousePosText;
         sf::RectangleShape backdrop;
@@ -98,7 +104,7 @@ public:
 
         target->draw(backdrop);
         target->draw(mousePosText);
-    }     //Renders debug panel
+    }
 };
 
 

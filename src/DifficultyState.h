@@ -9,7 +9,6 @@
 
 
 class DifficultyState : public iButton{
-private:
     sf::RectangleShape backgroundColor;
     sf::RectangleShape backgroundBorder;
 
@@ -27,9 +26,13 @@ private:
     void initDifficulty();
 
 public:
-
+    /// Difficulty state constructor
+    /// @param window
+    /// @param supportedKeys
+    /// @param states pointer to the states stack
+    /// @param theme active theme
     DifficultyState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys, std::stack<State*>* states,
-                     std::map<std::string, sf::Color>* theme);
+                    std::map<std::string, sf::Color>* theme);
     virtual ~DifficultyState();
 
     //Functions

@@ -8,7 +8,6 @@
 #include "GameState.h"
 
 class CustomState: public iButton, public iSlider{
-private:
     sf::RectangleShape backgroundColor;
     sf::RectangleShape backgroundBorder;
     Difficulty* customDif;
@@ -24,6 +23,11 @@ private:
     /// Creates the sliders
     void initSliders();
 public:
+    /// Custom state constructor
+    /// @param window
+    /// @param supportedKeys
+    /// @param states pointer to the states stack
+    /// @param theme active theme
     CustomState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys, std::stack<State*>* states,
                 std::map<std::string, sf::Color>* theme);
     virtual ~CustomState();

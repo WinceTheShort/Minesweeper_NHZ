@@ -53,7 +53,10 @@ protected:
 
 
 public:
-
+    /// State constructor
+    /// @param window
+    /// @param supportedKeys
+    /// @param states pointer to the states stack
     State(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys, std::stack<State*>* states);
     virtual ~State();
 

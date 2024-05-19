@@ -5,14 +5,14 @@
 #include "Cell.h"
 
 //CELL
-Cell::Cell(sf::Texture *spriteSheet, int x, int y, int gridSize, std::map<std::string, sf::Color>* theme):
-spriteSheet(spriteSheet), x(x), y(y), revealed(false), flagged(false), clicked(false), theme(theme){
+Cell::Cell(sf::Texture *spriteSheet, int x, int y, float gridSize, std::map<std::string, sf::Color>* theme):
+spriteSheet(spriteSheet), type(0), x(x), y(y), revealed(false), flagged(false), clicked(false), left(0), right(0), theme(theme){
+    //Initializes the sprite
     sprite.setPosition(x * gridSize,y * gridSize);
     sprite.setSize(sf::Vector2f(gridSize,gridSize));
     sprite.setFillColor(theme->at("BtnIdle"));
     sprite.setTexture(spriteSheet);
     sprite.setTextureRect(sf::IntRect(9*12, 0, 12, 12));
-
 }
 
 Cell::~Cell() {
@@ -24,6 +24,7 @@ void Cell::changeSprite(int spriteI) {
 }
 
 void Cell::update(const sf::Vector2i mousePos, Board* board) {
+    //Handles left click, reveal action
     if (!flagged){
         if (mousePos.x == x && mousePos.y == y){
             if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
@@ -33,7 +34,6 @@ void Cell::update(const sf::Vector2i mousePos, Board* board) {
             left = 0;
             clicked = false;
         }
-
         if (left == 1 && !sf::Mouse::isButtonPressed(sf::Mouse::Left)){
             if (mousePos.x == x && mousePos.y == y){
                 clicked = true;
@@ -45,6 +45,7 @@ void Cell::update(const sf::Vector2i mousePos, Board* board) {
         }
     }
 
+    //Handles right click, flag action
     if (!revealed){
         if (mousePos.x == x && mousePos.y == y){
             if(sf::Mouse::isButtonPressed(sf::Mouse::Right)){
@@ -53,7 +54,6 @@ void Cell::update(const sf::Vector2i mousePos, Board* board) {
         } else if (right != 1){
             right = 0;
         }
-
         if (right == 1 && !sf::Mouse::isButtonPressed(sf::Mouse::Right)){
             if (mousePos.x == x && mousePos.y == y){
                 flag(board);
@@ -70,6 +70,7 @@ void Cell::drawCell(sf::RenderTarget* target) {
 }
 
 void Cell::loadCell(bool revealed, bool flagged, int value) {
+    //Sets a cells params to the given values
     this->revealed = revealed;
     if (revealed)
         changeSprite(type);
@@ -79,7 +80,7 @@ void Cell::loadCell(bool revealed, bool flagged, int value) {
 }
 
 //BOMB
-BombCell::BombCell(sf::Texture *spriteSheet, int x, int y, int gridSize, std::map<std::string, sf::Color>* theme) : Cell(spriteSheet, x, y, gridSize, theme) {
+BombCell::BombCell(sf::Texture *spriteSheet, int x, int y, float gridSize, std::map<std::string, sf::Color>* theme) : Cell(spriteSheet, x, y, gridSize, theme) {
     type = BOMB;
 }
 
@@ -109,7 +110,7 @@ void BombCell::flag(Board *board) {
 }
 
 //ZERO
-ZeroCell::ZeroCell(sf::Texture *spriteSheet, int x, int y, int gridSize, std::map<std::string, sf::Color>* theme) : Cell(spriteSheet, x, y, gridSize, theme) {
+ZeroCell::ZeroCell(sf::Texture *spriteSheet, int x, int y, float gridSize, std::map<std::string, sf::Color>* theme) : Cell(spriteSheet, x, y, gridSize, theme) {
     type = ZERO;
 }
 
@@ -139,7 +140,7 @@ void ZeroCell::flag(Board *board) {
 }
 
 //NUM
-NumCell::NumCell(sf::Texture *spriteSheet, int x, int y, int gridSize, int value, std::map<std::string, sf::Color>* theme)  : Cell(spriteSheet, x, y, gridSize, theme),
+NumCell::NumCell(sf::Texture *spriteSheet, int x, int y, float gridSize, int value, std::map<std::string, sf::Color>* theme)  : Cell(spriteSheet, x, y, gridSize, theme),
 value(value){
     type = value;
 }
@@ -162,7 +163,10 @@ void NumCell::reveal(Board *board) {
     if (!revealed && !flagged){
         changeSprite(value);
         revealed = true;
-    } else if (revealed && clicked){
+    }
+    /*If the num cell is revealed, satisfied (the number of flags in it's surrounings match it's value)
+     * and left clicked, reveal it's surroundings*/
+    else if (revealed && clicked){
         if (value == board->checkSurroundings(x, y, FLAG)){
             clicked = false;
             board->revealSurroundings(x,y);
