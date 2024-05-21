@@ -151,6 +151,7 @@ NumCell::~NumCell() {
 
 void NumCell::loadCell(bool revealed, bool flagged, int value){
     this->value = value;
+    this->type = value;
     this->revealed = revealed;
     if (revealed)
         changeSprite(type);

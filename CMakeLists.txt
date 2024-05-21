@@ -83,7 +83,10 @@ add_executable(CMakeSFMLProject src/main.cpp
         src/StateInterfaces.hpp
         src/memtrace.cpp
         src/memtrace.h
-        src/memtrace.h)
+        src/memtrace.h
+        src/gtest_lite.h
+        src/Debug.hpp
+        src/Debug.hpp)
 target_link_libraries(CMakeSFMLProject PRIVATE sfml-graphics)
 target_compile_features(CMakeSFMLProject PRIVATE cxx_std_17)
 

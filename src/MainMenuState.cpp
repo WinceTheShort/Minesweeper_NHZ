@@ -129,7 +129,8 @@ void MainMenuState::render(sf::RenderTarget *target) {
     this->renderButtons(target);
     this->renderSteppers(target);
 
-    //Debug
-    //renderDebug(target);
+#ifdef DEBUG
+    renderDebug(target);
+#endif
 }
 

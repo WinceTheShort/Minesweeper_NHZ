@@ -6,7 +6,6 @@
 
 void GameState::initFonts() {
     this->font.loadFromFile("../../src/Resources/minepixel.ttf");
-    int* tmp = new int[10];
 }
 
 void GameState::initKeybinds() {
@@ -263,7 +262,8 @@ void GameState::render(sf::RenderTarget *target = nullptr) {
     target->draw(bombCounterIcon);
     target->draw(clockText);
 
-    //Debug
-    //renderDebug(target);
+#ifdef DEBUG
+    renderDebug(target);
+#endif
 }
 

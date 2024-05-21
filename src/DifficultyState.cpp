@@ -116,8 +116,10 @@ void DifficultyState::render(sf::RenderTarget *target) {
 
     this->renderButtons(target);
 
-    //Debug
-    //renderDebug(target);
+#ifdef DEBUG
+    renderDebug(target);
+#endif
+
 }
 
 

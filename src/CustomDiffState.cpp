@@ -98,6 +98,7 @@ void CustomState::render(sf::RenderTarget *target) {
     renderButtons(target);
     renderSliders(target);
 
-    //Debug
-    //renderDebug(target);
+#ifdef DEBUG
+    renderDebug(target);
+#endif
 }
