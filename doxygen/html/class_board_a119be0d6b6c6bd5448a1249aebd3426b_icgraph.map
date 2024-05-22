@@ -1,0 +1,9 @@
+<map id="Board::unflagged" name="Board::unflagged">
+<area shape="rect" id="Node000001" title=" " alt="" coords="159,56,277,83"/>
+<area shape="rect" id="Node000002" href="$class_bomb_cell.html#a4d84cdf93d2b1e3a3f1bae71ad352844" title=" " alt="" coords="5,5,111,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="158,53,102,35,103,30,160,48"/>
+<area shape="rect" id="Node000003" href="$class_num_cell.html#a2f148dab998dfd13bb47a7342f7691c9" title=" " alt="" coords="9,56,107,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="143,72,107,72,107,67,143,67"/>
+<area shape="rect" id="Node000004" href="$class_zero_cell.html#ad4b9658060deefe25810749e603ac806" title=" " alt="" coords="10,107,106,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="160,91,103,109,102,104,158,85"/>
+</map>

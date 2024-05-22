@@ -6,7 +6,6 @@
 #define SFML_NHZ_CELL_H
 
 #include "StateInterfaces.hpp"
-#include "Board.h"
 
 enum {ZERO = 0, HIDDEN = 9, BOMB = 10, FLAG = 11};
 
@@ -56,77 +55,16 @@ public:
     /// @param revealed
     /// @param flagged
     /// @param value
-    virtual void loadCell(bool revealed, bool flagged, int value);
+    virtual void loadCell(bool revealed, bool flagged, int value) = 0;
     /// Reveals the cell
     /// @param board
     virtual void reveal(Board* board) = 0;
+    /// Reveals the cell if it's a bomb
+    /// @param board
+    virtual void revealIfBomb(Board* board);
     /// Flags the cell
     /// @param board
     virtual void flag(Board* board) = 0;
-};
-
-class BombCell: public Cell{
-public:
-    /// Cell constructor
-    /// @param spriteSheet pointer to the spritesheet texture
-    /// @param x x grid cords
-    /// @param y y grid cords
-    /// @param gridSize
-    /// @param theme active theme
-    BombCell(sf::Texture* spriteSheet, int x, int y, float gridSize, std::map<std::string, sf::Color>* theme);
-    ~BombCell() override;
-
-    /// Reveals the bomb cell
-    /// @param board pointer to parent board
-    void reveal(Board* board) override;
-    /// Flags the bomb cell
-    /// @param board pointer to parent board
-    void flag(Board* board) override;
-};
-
-class ZeroCell: public Cell {
-public:
-    /// Cell constructor
-    /// @param spriteSheet pointer to the spritesheet texture
-    /// @param x x grid cords
-    /// @param y y grid cords
-    /// @param gridSize
-    /// @param theme active theme
-    ZeroCell(sf::Texture* spriteSheet, int x, int y, float gridSize, std::map<std::string, sf::Color>* theme);
-    ~ZeroCell() override;
-
-    /// Reveals the zero cell
-    /// @param board pointer to parent board
-    void reveal(Board* board) override;
-    /// Flags the zero cell
-    /// @param board pointer to parent board
-    void flag(Board* board) override;
-};
-
-class NumCell: public Cell {
-    int value;
-public:
-    /// Cell constructor
-    /// @param spriteSheet pointer to the spritesheet texture
-    /// @param x x grid cords
-    /// @param y y grid cords
-    /// @param gridSize
-    /// @param value num cell value
-    /// @param theme active theme
-    NumCell(sf::Texture* spriteSheet, int x, int y, float gridSize, int value, std::map<std::string, sf::Color>* theme);
-    ~NumCell() override;
-
-    /// Sets the num cell's parameters to the given values
-    /// @param revealed
-    /// @param flagged
-    /// @param value
-    void loadCell(bool revealed, bool flagged, int value) override;
-    /// Reveales the num cell
-    /// @param board pointer to parent board
-    void reveal(Board* board) override;
-    /// Flags the num cell
-    /// @param board pointer to parent board
-    void flag(Board* board) override;
 };
 
 

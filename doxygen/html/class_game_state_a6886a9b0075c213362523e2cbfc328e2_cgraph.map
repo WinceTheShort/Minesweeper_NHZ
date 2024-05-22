@@ -1,0 +1,13 @@
+<map id="GameState::handleButtons" name="GameState::handleButtons">
+<area shape="rect" id="Node000001" title="Performs actions when buttons are pressed." alt="" coords="5,81,184,108"/>
+<area shape="rect" id="Node000002" href="$class_board.html#a5a6d3e4873393cca915e1b99f58962e0" title="Saves the game to the save file." alt="" coords="232,56,356,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,81,216,77,216,82,184,86"/>
+<area shape="rect" id="Node000006" href="$class_board.html#a5a04f0691794aa12d43d338866933511" title=" " alt="" coords="239,107,349,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="184,103,224,109,224,114,183,109"/>
+<area shape="rect" id="Node000003" href="$class_cell.html#af2d6864d97383af84e44e6664d1e02e4" title=" " alt="" coords="407,5,522,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="341,53,402,34,404,39,342,58"/>
+<area shape="rect" id="Node000004" href="$class_cell.html#a6dab60123b03ce9ef114705034cfd5ad" title=" " alt="" coords="404,56,525,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="356,67,389,67,389,72,356,72"/>
+<area shape="rect" id="Node000005" href="$class_cell.html#a6a4c5cadf6386ca1c0bbfbc0ec225a50" title=" " alt="" coords="416,107,513,133"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="342,81,404,99,402,104,341,86"/>
+</map>

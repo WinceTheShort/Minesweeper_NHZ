@@ -1,0 +1,11 @@
+<map id="Board::flagged" name="Board::flagged">
+<area shape="rect" id="Node000001" title=" " alt="" coords="159,81,263,108"/>
+<area shape="rect" id="Node000002" href="$class_board.html#ad1716e22dd6ef48038eae993be631671" title=" " alt="" coords="9,5,107,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,76,109,46,86,35,89,30,112,42,170,71"/>
+<area shape="rect" id="Node000003" href="$class_bomb_cell.html#a4d84cdf93d2b1e3a3f1bae71ad352844" title=" " alt="" coords="5,56,111,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="143,86,110,81,111,75,144,81"/>
+<area shape="rect" id="Node000004" href="$class_num_cell.html#a2f148dab998dfd13bb47a7342f7691c9" title=" " alt="" coords="9,107,107,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="144,108,108,114,107,109,143,103"/>
+<area shape="rect" id="Node000005" href="$class_zero_cell.html#ad4b9658060deefe25810749e603ac806" title=" " alt="" coords="10,157,106,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="170,118,112,148,89,159,86,154,109,143,168,113"/>
+</map>

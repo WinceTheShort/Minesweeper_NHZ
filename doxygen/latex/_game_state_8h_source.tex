@@ -1,0 +1,93 @@
+\doxysection{Game\+State.\+h}
+\hypertarget{_game_state_8h_source}{}\label{_game_state_8h_source}\index{src/GameState.h@{src/GameState.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ wince\ on\ 2024.\ 04.\ 22..}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ SFML\_NHZ\_GAMESTATE\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ SFML\_NHZ\_GAMESTATE\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Board.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_state}{GameState}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classi_button}{iButton}}\{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{comment}{//Variables}}
+\DoxyCodeLine{00013\ \ \ \ \ sf::RectangleShape\ backgroundColor,\ backgroundBorder,\ uiBackground;}
+\DoxyCodeLine{00014\ \ \ \ \ sf::Texture\ buttonSprites,\ cellSprites;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ sf::View\ view;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{float}\ viewSpeed;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{bool}\ isShiftPressed;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ sf::Vector2i\ mousePosGrid;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{float}\ gridSize;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_difficulty}{Difficulty}}\ *currentDifficulty;}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_board}{Board}}*\ board;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ correctFlag,\ wrongFlag;}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{bool}\ gameEnded,\ win;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ clock;}
+\DoxyCodeLine{00030\ \ \ \ \ sf::Clock\ timerClock;}
+\DoxyCodeLine{00031\ \ \ \ \ sf::Text\ bombCounterText,\ clockText,\ youWinText,\ gameOverText;}
+\DoxyCodeLine{00032\ \ \ \ \ sf::RectangleShape\ bombCounterIcon;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ std::map<std::string,\ sf::Color>*\ theme;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//Functions}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ initFonts();}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ initKeybinds()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ initButtons()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00043\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_game_state_a30f4b103ccf88d2ed9f499640b0c3711}{GameState}}(sf::RenderWindow*\ window,\ std::map<std::string,\ int>*\ supportedKeys,\ std::stack<State*>*\ states,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_difficulty}{Difficulty}}\ *difficulty,\ std::map<std::string,\ sf::Color>*\ theme,\ \textcolor{keywordtype}{bool}\ load\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{class_game_state}{\string~GameState}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//Functions}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_state_a47b539f3bbad01019e5fdad0e82c3fda}{endState}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_state_ad0d4f314f103697df367999942230c9c}{checkEndGameCondition}}();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_state_a404b264fb0a1bf4231f16f8d2cdc4506}{handleInput}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ dt)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_state_a6886a9b0075c213362523e2cbfc328e2}{handleButtons}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_state_aec72b2d3ad6c56d0af9a6e84c7fab3c6}{updateMousePositions}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_state_aada8eb4df8eacf56a65c5e63e3aae729}{updateClock}}();}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_state_a2b680aeacd85a93e0c5bf02c2b6d73de}{updateBombCounter}}();}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_state_a7f853d3fd771d00495f20afa8d47ad34}{update}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ dt)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_state_accd30df00c2dfd559226c0f0273e14a6}{render}}(sf::RenderTarget*\ target)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_state_abf73ff938f702adace74663c1cd72ddc}{renderDebug}}(sf::RenderTarget*\ target)\textcolor{keyword}{\ override}\{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ sf::Text\ mousePosText;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ sf::RectangleShape\ backdrop;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ sf::Font\ debugFont;}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ debugFont.loadFromFile(\textcolor{stringliteral}{"{}../../src/Resources/minepixel.ttf"{}});}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}Screen:\ "{}}\ <<\ mousePosScreen.x\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ mousePosScreen.y\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ <<}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Window:\ "{}}\ <<\ mousePosWindow.x\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ mousePosWindow.y\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ <<}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}View:\ "{}}\ <<\ mousePosView.x\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ mousePosView.y\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ <<}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Grid:\ "{}}\ <<\ mousePosGrid.x\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ mousePosGrid.y\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ <<}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}View\ size:\ "{}}\ <<\ view.getSize().x\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ view.getSize().y\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ <<}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}View\ speed:"{}}\ <<\ viewSpeed\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ <<}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Columns:\ "{}}\ <<\ currentDifficulty-\/>columns\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ <<}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Rows:\ "{}}\ <<\ currentDifficulty-\/>rows\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ <<}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Bombs:\ "{}}\ <<\ currentDifficulty-\/>bombs\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ mousePosText.setFont(font);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ mousePosText.setString(ss.str());}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ mousePosText.setPosition(sf::Vector2f(20,20));}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ mousePosText.setCharacterSize(15);}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ mousePosText.setFillColor(sf::Color::Black);}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ backdrop.setSize(sf::Vector2f(300,200));}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ backdrop.setFillColor(sf::Color(255,255,255,100));}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ target-\/>draw(backdrop);}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ target-\/>draw(mousePosText);}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+\DoxyCodeLine{00108\ \};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//SFML\_NHZ\_GAMESTATE\_H}}
+
+\end{DoxyCode}

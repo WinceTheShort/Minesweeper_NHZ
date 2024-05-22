@@ -1,0 +1,11 @@
+<map id="DifficultyState::update" name="DifficultyState::update">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,154,83"/>
+<area shape="rect" id="Node000002" href="$class_difficulty_state.html#ad6817282ae89371fb32ef64c123417c8" title=" " alt="" coords="210,5,386,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,53,222,34,223,39,141,58"/>
+<area shape="rect" id="Node000004" href="$classi_button.html#ab94f5288f1aa0211ec54ad9196fd81dd" title="Calls the all of the existing buttons&#39; update function." alt="" coords="221,56,375,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="154,67,205,67,205,72,154,72"/>
+<area shape="rect" id="Node000005" href="$class_state.html#a55cd17e1b46e2a7345f3b98f01c123b8" title="Updates the mouse positions." alt="" coords="202,107,394,133"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="141,81,223,100,222,105,140,86"/>
+<area shape="rect" id="Node000003" href="$class_state.html#ae7ffd43d9da38fcdb420db95e297bfe6" title="Ckecks if user hit the quit keybind and sets the quit boolean accordingly." alt="" coords="442,5,580,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="386,16,426,16,426,21,386,21"/>
+</map>

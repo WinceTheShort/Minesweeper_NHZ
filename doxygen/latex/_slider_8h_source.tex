@@ -1,0 +1,59 @@
+\doxysection{Slider.\+h}
+\hypertarget{_slider_8h_source}{}\label{_slider_8h_source}\index{src/Slider.h@{src/Slider.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ wince\ on\ 2024.\ 04.\ 26..}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ SFML\_NHZ\_SLIDER\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ SFML\_NHZ\_SLIDER\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <stack>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}SFML/Graphics.hpp"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}SFML/System.hpp"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}SFML/Window.hpp"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}SFML/Audio.hpp"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}SFML/Network.hpp"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_slider}{Slider}}\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00026\ \ \ \ \ sf::RectangleShape\ area;}
+\DoxyCodeLine{00027\ \ \ \ \ sf::RectangleShape\ slider;}
+\DoxyCodeLine{00028\ \ \ \ \ sf::Font*\ font;}
+\DoxyCodeLine{00029\ \ \ \ \ sf::Text\ text;}
+\DoxyCodeLine{00030\ \ \ \ \ sf::Text\ valueDisplay;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}\ value,\ min,\ max;}
+\DoxyCodeLine{00032\ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{float}\ sliderMaxX;}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ sliderState;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ std::map<std::string,\ sf::Color>*\ theme;}
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{class_slider_ae464706a62b8f22bfd80a53ca168f676}{Slider}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ width,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ sf::Font*\ font,\ \textcolor{keyword}{const}\ std::string\&\ text,\ \textcolor{keywordtype}{int}\ fontSize,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,\ sf::Color>*\ theme,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ min,\ \textcolor{keywordtype}{int}\ max,\ \textcolor{keywordtype}{float}\ scale\ =\ 1);}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{class_slider}{\string~Slider}}();}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_slider_ac02fd8104a4c78855184006051cbd738}{getValue}}()\ \textcolor{keyword}{const};\ \textcolor{comment}{//returns\ sliders\ current\ value}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_slider_ab58d7fff8230aade09f12fd36c7af61a}{changeTheme}}(std::map<std::string,\ sf::Color>*\ theme)\{this-\/>theme\ =\ theme;\}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_slider_adcfca94bc9e8098b338b2ef3c7249402}{changeMax}}(\textcolor{keywordtype}{int}\ newMax);}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_slider_a1dbd11b7b70649d9486f0b77eb00dd4b}{update}}(sf::Vector2f\ mousePos);}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_slider_a15f65ea7c3ded9a7adc46319eeeb43af}{render}}(sf::RenderTarget*\ target);}
+\DoxyCodeLine{00071\ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//SFML\_NHZ\_SLIDER\_H}}
+
+\end{DoxyCode}

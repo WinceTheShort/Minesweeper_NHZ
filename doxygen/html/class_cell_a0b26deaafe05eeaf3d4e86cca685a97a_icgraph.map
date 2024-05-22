@@ -1,0 +1,22 @@
+<map id="Cell::reveal" name="Cell::reveal">
+<area shape="rect" id="Node000001" title=" " alt="" coords="908,81,992,108"/>
+<area shape="rect" id="Node000002" href="$class_board.html#a47d0e51aa2f0e1bb8b6d86afc778dcf2" title="Reveals bombs, used at game over." alt="" coords="705,19,842,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="895,78,812,48,814,43,897,73"/>
+<area shape="rect" id="Node000006" href="$class_board.html#a6430cd9bb89b7ba270e0d6fab0720d01" title=" " alt="" coords="687,81,860,108"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="892,97,860,97,860,92,892,92"/>
+<area shape="rect" id="Node000009" href="$class_cell.html#a3b3e8d69751ace46b097f64e2d174c43" title=" " alt="" coords="728,144,819,171"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="897,116,814,146,812,141,895,111"/>
+<area shape="rect" id="Node000003" href="$class_game_state.html#ad0d4f314f103697df367999942230c9c" title="Checks if the end game conditions are met and sets the win and end bool accordingly." alt="" coords="397,5,639,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="689,30,639,28,640,22,690,25"/>
+<area shape="rect" id="Node000004" href="$class_game_state.html#a404b264fb0a1bf4231f16f8d2cdc4506" title=" " alt="" coords="188,31,349,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="382,35,350,38,349,33,381,30"/>
+<area shape="rect" id="Node000005" href="$class_game_state.html#a7f853d3fd771d00495f20afa8d47ad34" title=" " alt="" coords="5,81,140,108"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="200,64,128,83,126,78,198,59"/>
+<area shape="rect" id="Node000007" href="$class_num_cell.html#a4a700fb9fbaafaeb43923eb732979e32" title=" " alt="" coords="463,56,574,83"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="672,87,574,77,574,72,672,82"/>
+<area shape="rect" id="Node000008" href="$class_zero_cell.html#a1e8692497a5afc7ee8430ee88812ff6b" title=" " alt="" coords="464,107,573,133"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="672,107,574,117,573,112,672,102"/>
+<area shape="rect" id="Node000010" href="$class_board.html#a743b7d4036ad50428f7f104a906d9716" title=" " alt="" coords="200,107,337,133"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="713,161,569,160,397,148,329,137,329,131,397,143,569,154,713,156"/>
+<area shape="poly" id="edge10_Node000010_Node000005" title=" " alt="" coords="185,112,140,106,140,101,186,107"/>
+</map>

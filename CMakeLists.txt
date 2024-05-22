@@ -86,7 +86,16 @@ add_executable(CMakeSFMLProject src/main.cpp
         src/memtrace.h
         src/gtest_lite.h
         src/Debug.hpp
-        src/Debug.hpp)
+        src/Debug.hpp
+        src/BombCell.cpp
+        src/BombCell.h
+        src/BombCell.h
+        src/ZeroCell.cpp
+        src/ZeroCell.h
+        src/ZeroCell.h
+        src/NumCell.cpp
+        src/NumCell.h
+        src/NumCell.h)
 target_link_libraries(CMakeSFMLProject PRIVATE sfml-graphics)
 target_compile_features(CMakeSFMLProject PRIVATE cxx_std_17)
 

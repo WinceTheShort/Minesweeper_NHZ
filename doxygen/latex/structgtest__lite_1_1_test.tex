@@ -1,0 +1,70 @@
+\doxysection{gtest\+\_\+lite\+::Test Struct Reference}
+\hypertarget{structgtest__lite_1_1_test}{}\label{structgtest__lite_1_1_test}\index{gtest\_lite::Test@{gtest\_lite::Test}}
+
+
+{\ttfamily \#include $<$gtest\+\_\+lite.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structgtest__lite_1_1_test_a2227b70fcc5dfb3c326bf117dd8f7e79}\label{structgtest__lite_1_1_test_a2227b70fcc5dfb3c326bf117dd8f7e79} 
+void {\bfseries begin} (const char \texorpdfstring{$\ast$}{*}n)
+\begin{DoxyCompactList}\small\item\em Teszt kezdete. \end{DoxyCompactList}\item 
+\Hypertarget{structgtest__lite_1_1_test_a86d41ffed05f53653fb27b918764a44e}\label{structgtest__lite_1_1_test_a86d41ffed05f53653fb27b918764a44e} 
+std\+::ostream \& {\bfseries end} (bool memchk=false)
+\begin{DoxyCompactList}\small\item\em Teszt vége. \end{DoxyCompactList}\item 
+\Hypertarget{structgtest__lite_1_1_test_aadbfd0f53c56d975f793602996631195}\label{structgtest__lite_1_1_test_aadbfd0f53c56d975f793602996631195} 
+bool {\bfseries fail} ()
+\item 
+\Hypertarget{structgtest__lite_1_1_test_a2de71946be5b3dc7f03c99868785c1de}\label{structgtest__lite_1_1_test_a2de71946be5b3dc7f03c99868785c1de} 
+std\+::ostream \& {\bfseries expect} (bool st, const char \texorpdfstring{$\ast$}{*}file, int line, const char \texorpdfstring{$\ast$}{*}expr, bool pr=false)
+\begin{DoxyCompactList}\small\item\em Eredményt adminisztráló tagfüggvény True a jó eset. \end{DoxyCompactList}\item 
+\Hypertarget{structgtest__lite_1_1_test_a5a879233c2aa110626668c06140f6e71}\label{structgtest__lite_1_1_test_a5a879233c2aa110626668c06140f6e71} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Test} ()
+\begin{DoxyCompactList}\small\item\em Destruktor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{structgtest__lite_1_1_test}{Test}} \& \mbox{\hyperlink{structgtest__lite_1_1_test_aaece9ac882e0b17b295cceb7e3ca10ce}{get\+Test}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structgtest__lite_1_1_test_a6da678d43b72b9e2bff1c99e1d3c48f5}\label{structgtest__lite_1_1_test_a6da678d43b72b9e2bff1c99e1d3c48f5} 
+int {\bfseries sum}
+\begin{DoxyCompactList}\small\item\em tesztek számlálója \end{DoxyCompactList}\item 
+\Hypertarget{structgtest__lite_1_1_test_a4fb6ee7bd903717d970e3f0504cdeeab}\label{structgtest__lite_1_1_test_a4fb6ee7bd903717d970e3f0504cdeeab} 
+int {\bfseries failed}
+\begin{DoxyCompactList}\small\item\em hibás tesztek \end{DoxyCompactList}\item 
+\Hypertarget{structgtest__lite_1_1_test_a91d9c63794d2b9b49e0c48d897208560}\label{structgtest__lite_1_1_test_a91d9c63794d2b9b49e0c48d897208560} 
+int {\bfseries ablocks}
+\begin{DoxyCompactList}\small\item\em allokált blokkok száma \end{DoxyCompactList}\item 
+\Hypertarget{structgtest__lite_1_1_test_a59a9a7f0ef7867af604ce5678f7a2c13}\label{structgtest__lite_1_1_test_a59a9a7f0ef7867af604ce5678f7a2c13} 
+bool {\bfseries status}
+\begin{DoxyCompactList}\small\item\em éppen futó teszt státusza \end{DoxyCompactList}\item 
+\Hypertarget{structgtest__lite_1_1_test_a1145ceb335a60a808b7b4d5d1624b2a5}\label{structgtest__lite_1_1_test_a1145ceb335a60a808b7b4d5d1624b2a5} 
+bool {\bfseries tmp}
+\begin{DoxyCompactList}\small\item\em temp a kivételkezeléshez; \end{DoxyCompactList}\item 
+\Hypertarget{structgtest__lite_1_1_test_a8d495a42580e3ae337f9c4982136b700}\label{structgtest__lite_1_1_test_a8d495a42580e3ae337f9c4982136b700} 
+std\+::string {\bfseries name}
+\begin{DoxyCompactList}\small\item\em éppen futó teszt neve \end{DoxyCompactList}\item 
+\Hypertarget{structgtest__lite_1_1_test_af4784302d78bb004bcb20b7f75ec06c3}\label{structgtest__lite_1_1_test_af4784302d78bb004bcb20b7f75ec06c3} 
+std\+::fstream {\bfseries null}
+\begin{DoxyCompactList}\small\item\em nyelő, ha nem kell kiírni semmit \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Tesztek állapotát tároló osztály. Egyetlen egy statikus példány keletkezik, aminek a destruktora a futás végén hívódik meg. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structgtest__lite_1_1_test_aaece9ac882e0b17b295cceb7e3ca10ce}\index{gtest\_lite::Test@{gtest\_lite::Test}!getTest@{getTest}}
+\index{getTest@{getTest}!gtest\_lite::Test@{gtest\_lite::Test}}
+\doxysubsubsection{\texorpdfstring{getTest()}{getTest()}}
+{\footnotesize\ttfamily \label{structgtest__lite_1_1_test_aaece9ac882e0b17b295cceb7e3ca10ce} 
+static \mbox{\hyperlink{structgtest__lite_1_1_test}{Test}} \& gtest\+\_\+lite\+::\+Test\+::get\+Test (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\texorpdfstring{$<$}{<} egyedüli (singleton) példány
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{gtest__lite_8h}{gtest\+\_\+lite.\+h}}\end{DoxyCompactItemize}

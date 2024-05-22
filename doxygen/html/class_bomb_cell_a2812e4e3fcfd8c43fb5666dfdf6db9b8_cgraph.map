@@ -1,0 +1,9 @@
+<map id="BombCell::reveal" name="BombCell::reveal">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,124,57"/>
+<area shape="rect" id="Node000002" href="$class_cell.html#a6c6a811ec828b4a0ac022578f49f9e1a" title=" " alt="" coords="179,5,307,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,33,164,27,165,32,125,38"/>
+<area shape="rect" id="Node000003" href="$class_board.html#a4c60e0bcff24f72568e52c1ea919439a" title=" " alt="" coords="172,56,314,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="125,50,156,54,156,60,124,55"/>
+<area shape="rect" id="Node000004" href="$class_board.html#ae69593567ae7275399170538c96bfa21" title=" " alt="" coords="362,56,483,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="314,67,346,67,346,72,314,72"/>
+</map>

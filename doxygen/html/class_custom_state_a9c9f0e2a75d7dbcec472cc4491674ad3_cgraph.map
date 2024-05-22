@@ -1,0 +1,5 @@
+<map id="CustomState::handleInput" name="CustomState::handleInput">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,177,32"/>
+<area shape="rect" id="Node000002" href="$class_state.html#ae7ffd43d9da38fcdb420db95e297bfe6" title="Ckecks if user hit the quit keybind and sets the quit boolean accordingly." alt="" coords="225,5,363,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,16,209,16,209,21,177,21"/>
+</map>

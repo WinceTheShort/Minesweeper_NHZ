@@ -182,7 +182,7 @@ void GameState::handleButtons() { //Updates and handles buttons
     }
 
     //Save
-    if (this->buttons["SAVE"]->isPressed() && !gameEnded){
+    if (this->buttons["SAVE"]->isPressed() && !gameEnded && board->getStarted()){
         board->setTime((int)timerClock.getElapsedTime().asSeconds() + clock);
         board->saveGame();
     }

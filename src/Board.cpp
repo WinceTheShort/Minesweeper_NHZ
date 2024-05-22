@@ -212,8 +212,7 @@ void Board::revealBombs()
 {
     for (int i = 0; i < diff->columns; ++i) {
         for (int j = 0; j < diff->rows; ++j) {
-            if(boardCells[i][j]->getType() == BOMB && !boardCells[i][j]->getRevealed())
-                boardCells[i][j]->reveal(this);
+            boardCells[i][j]->revealIfBomb(this);
         }
     }
 }

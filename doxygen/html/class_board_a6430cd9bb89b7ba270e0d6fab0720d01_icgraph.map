@@ -1,0 +1,7 @@
+<map id="Board::revealSurroundings" name="Board::revealSurroundings">
+<area shape="rect" id="Node000001" title=" " alt="" coords="165,31,337,57"/>
+<area shape="rect" id="Node000002" href="$class_num_cell.html#a4a700fb9fbaafaeb43923eb732979e32" title=" " alt="" coords="5,5,117,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,33,117,29,117,23,149,28"/>
+<area shape="rect" id="Node000003" href="$class_zero_cell.html#a1e8692497a5afc7ee8430ee88812ff6b" title=" " alt="" coords="6,56,116,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="149,60,116,65,116,59,149,55"/>
+</map>

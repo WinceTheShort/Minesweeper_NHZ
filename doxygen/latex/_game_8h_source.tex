@@ -1,0 +1,60 @@
+\doxysection{Game.\+h}
+\hypertarget{_game_8h_source}{}\label{_game_8h_source}\index{src/Game.h@{src/Game.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ wince\ on\ 2024.\ 04.\ 21..}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ SFML\_NHZ\_GAME\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ SFML\_NHZ\_GAME\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}MainMenuState.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game}{Game}}\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{comment}{//Variables}}
+\DoxyCodeLine{00012\ \ \ \ \ sf::RenderWindow*\ window;}
+\DoxyCodeLine{00013\ \ \ \ \ sf::Event\ event;}
+\DoxyCodeLine{00014\ \ \ \ \ std::vector<sf::VideoMode>\ videoModes;}
+\DoxyCodeLine{00015\ \ \ \ \ sf::ContextSettings\ windowSetings;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{bool}\ fullscreen;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ sf::Clock\ dtClock;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Delta\ time}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{float}\ dt;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ std::stack<State*>\ states;\ \ \textcolor{comment}{//States\ stack}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ std::map<std::string,\ int>\ supportedKeys;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ std::string\ activeTheme;}
+\DoxyCodeLine{00026\ \ \ \ \ std::map<std::string,\ std::map<std::string,\ sf::Color>>\ colorThemes;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//Init}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ initVariables();}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ initWindow();}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ initStates();}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ initKeys();}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ initThemes();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_game}{Game}}();}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_game}{\string~Game}}();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{//Functions}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_affc578241ab87032cacb92090766626f}{endApp}}();}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{comment}{//update}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a8a513f3fa9524a00cb5b009fefa32c3a}{updateDt}}();}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_aec4876cfb285b9301b39d3a134bd608a}{updateSFMLEvents}}();}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a79df6376b332d63c9eca0dcee30305c3}{update}}();}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Render}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a15ddd769261d923827a3cdf41499c843}{render}}();}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{comment}{//GameLoop}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a1ab78f5ed0d5ea879157357cf2fb2afa}{run}}();}
+\DoxyCodeLine{00062\ \};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//SFML\_NHZ\_GAME\_H}}
+
+\end{DoxyCode}

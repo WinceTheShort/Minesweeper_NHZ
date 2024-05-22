@@ -1,0 +1,111 @@
+\doxysection{Slider Class Reference}
+\hypertarget{class_slider}{}\label{class_slider}\index{Slider@{Slider}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_slider_ae464706a62b8f22bfd80a53ca168f676}{Slider}} (float x, float y, float width, sf\+::\+Font \texorpdfstring{$\ast$}{*}font, const std\+::string \&text, int font\+Size, std\+::map$<$ std\+::string, sf\+::\+Color $>$ \texorpdfstring{$\ast$}{*}theme, int min, int max, float scale=1)
+\item 
+int \mbox{\hyperlink{class_slider_ac02fd8104a4c78855184006051cbd738}{get\+Value}} () const
+\item 
+void \mbox{\hyperlink{class_slider_ab58d7fff8230aade09f12fd36c7af61a}{change\+Theme}} (std\+::map$<$ std\+::string, sf\+::\+Color $>$ \texorpdfstring{$\ast$}{*}theme)
+\item 
+void \mbox{\hyperlink{class_slider_adcfca94bc9e8098b338b2ef3c7249402}{change\+Max}} (int new\+Max)
+\item 
+void \mbox{\hyperlink{class_slider_a1dbd11b7b70649d9486f0b77eb00dd4b}{update}} (sf\+::\+Vector2f mouse\+Pos)
+\item 
+void \mbox{\hyperlink{class_slider_a15f65ea7c3ded9a7adc46319eeeb43af}{render}} (sf\+::\+Render\+Target \texorpdfstring{$\ast$}{*}target)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_slider_ae464706a62b8f22bfd80a53ca168f676}\index{Slider@{Slider}!Slider@{Slider}}
+\index{Slider@{Slider}!Slider@{Slider}}
+\doxysubsubsection{\texorpdfstring{Slider()}{Slider()}}
+{\footnotesize\ttfamily \label{class_slider_ae464706a62b8f22bfd80a53ca168f676} 
+Slider\+::\+Slider (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{, }\item[{float}]{width}{, }\item[{sf\+::\+Font \texorpdfstring{$\ast$}{*}}]{font}{, }\item[{const std\+::string \&}]{text}{, }\item[{int}]{font\+Size}{, }\item[{std\+::map$<$ std\+::string, sf\+::\+Color $>$ \texorpdfstring{$\ast$}{*}}]{theme}{, }\item[{int}]{min}{, }\item[{int}]{max}{, }\item[{float}]{scale}{ = {\ttfamily 1}}\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+{\em width} & \\
+\hline
+{\em font} & \\
+\hline
+{\em text} & String displayed above the slider \\
+\hline
+{\em font\+Size} & \\
+\hline
+{\em theme} & \\
+\hline
+{\em min} & min value \\
+\hline
+{\em max} & max value \\
+\hline
+{\em scale} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_slider_adcfca94bc9e8098b338b2ef3c7249402}\index{Slider@{Slider}!changeMax@{changeMax}}
+\index{changeMax@{changeMax}!Slider@{Slider}}
+\doxysubsubsection{\texorpdfstring{changeMax()}{changeMax()}}
+{\footnotesize\ttfamily \label{class_slider_adcfca94bc9e8098b338b2ef3c7249402} 
+void Slider\+::change\+Max (\begin{DoxyParamCaption}\item[{int}]{new\+Max}{}\end{DoxyParamCaption})}
+
+Changes the maximum value 
+\begin{DoxyParams}{Parameters}
+{\em new\+Max} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_slider_ab58d7fff8230aade09f12fd36c7af61a}\index{Slider@{Slider}!changeTheme@{changeTheme}}
+\index{changeTheme@{changeTheme}!Slider@{Slider}}
+\doxysubsubsection{\texorpdfstring{changeTheme()}{changeTheme()}}
+{\footnotesize\ttfamily \label{class_slider_ab58d7fff8230aade09f12fd36c7af61a} 
+void Slider\+::change\+Theme (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, sf\+::\+Color $>$ \texorpdfstring{$\ast$}{*}}]{theme}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Changes the slider\textquotesingle{}s theme 
+\begin{DoxyParams}{Parameters}
+{\em theme} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_slider_ac02fd8104a4c78855184006051cbd738}\index{Slider@{Slider}!getValue@{getValue}}
+\index{getValue@{getValue}!Slider@{Slider}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily \label{class_slider_ac02fd8104a4c78855184006051cbd738} 
+int Slider\+::get\+Value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns the sliders current value \begin{DoxyReturn}{Returns}
+value 
+\end{DoxyReturn}
+\Hypertarget{class_slider_a15f65ea7c3ded9a7adc46319eeeb43af}\index{Slider@{Slider}!render@{render}}
+\index{render@{render}!Slider@{Slider}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{class_slider_a15f65ea7c3ded9a7adc46319eeeb43af} 
+void Slider\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \texorpdfstring{$\ast$}{*}}]{target}{}\end{DoxyParamCaption})}
+
+Renders the slider 
+\begin{DoxyParams}{Parameters}
+{\em target} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_slider_a1dbd11b7b70649d9486f0b77eb00dd4b}\index{Slider@{Slider}!update@{update}}
+\index{update@{update}!Slider@{Slider}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_slider_a1dbd11b7b70649d9486f0b77eb00dd4b} 
+void Slider\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{mouse\+Pos}{}\end{DoxyParamCaption})}
+
+Updates the slider 
+\begin{DoxyParams}{Parameters}
+{\em mouse\+Pos} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Slider.\+h\item 
+src/Slider.\+cpp\end{DoxyCompactItemize}

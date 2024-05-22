@@ -1,0 +1,301 @@
+\doxysection{Cell Class Reference}
+\hypertarget{class_cell}{}\label{class_cell}\index{Cell@{Cell}}
+
+
+Inheritance diagram for Cell\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{class_cell__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_cell_a690fe562870213e83bc9980d1640b589}{Cell}} (sf\+::\+Texture \texorpdfstring{$\ast$}{*}sprite\+Sheet, int x, int y, float grid\+Size, std\+::map$<$ std\+::string, sf\+::\+Color $>$ \texorpdfstring{$\ast$}{*}theme)
+\item 
+int \mbox{\hyperlink{class_cell_a6a4c5cadf6386ca1c0bbfbc0ec225a50}{get\+Type}} () const
+\item 
+bool \mbox{\hyperlink{class_cell_af2d6864d97383af84e44e6664d1e02e4}{get\+Flagged}} () const
+\item 
+bool \mbox{\hyperlink{class_cell_a6dab60123b03ce9ef114705034cfd5ad}{get\+Revealed}} () const
+\item 
+void \mbox{\hyperlink{class_cell_a6c6a811ec828b4a0ac022578f49f9e1a}{change\+Sprite}} (int spriteI)
+\item 
+void \mbox{\hyperlink{class_cell_a3b3e8d69751ace46b097f64e2d174c43}{update}} (sf\+::\+Vector2i mouse\+Pos, \mbox{\hyperlink{class_board}{Board}} \texorpdfstring{$\ast$}{*}board)
+\item 
+void \mbox{\hyperlink{class_cell_a8670f7a9554fb177f79a315d1a4bd369}{draw\+Cell}} (sf\+::\+Render\+Target \texorpdfstring{$\ast$}{*}target)
+\item 
+virtual void \mbox{\hyperlink{class_cell_a477b67ea9b48d5fcd995fdedaa788497}{load\+Cell}} (bool revealed, bool flagged, int value)
+\item 
+virtual void \mbox{\hyperlink{class_cell_a0b26deaafe05eeaf3d4e86cca685a97a}{reveal}} (\mbox{\hyperlink{class_board}{Board}} \texorpdfstring{$\ast$}{*}board)=0
+\item 
+virtual void \mbox{\hyperlink{class_cell_ab42024d2ae9a7de9d24790ed2a8ff849}{flag}} (\mbox{\hyperlink{class_board}{Board}} \texorpdfstring{$\ast$}{*}board)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_cell_a4d6caac6cd9ccdad5272c7f9b68614d6}\label{class_cell_a4d6caac6cd9ccdad5272c7f9b68614d6} 
+sf\+::\+Rectangle\+Shape {\bfseries sprite}
+\item 
+\Hypertarget{class_cell_a229cb2cb1cc45a1a25acc4945893429d}\label{class_cell_a229cb2cb1cc45a1a25acc4945893429d} 
+sf\+::\+Texture \texorpdfstring{$\ast$}{*} {\bfseries sprite\+Sheet}
+\item 
+\Hypertarget{class_cell_a6a3f3ec6c13524695884f3a302b23d88}\label{class_cell_a6a3f3ec6c13524695884f3a302b23d88} 
+int {\bfseries type}
+\item 
+\Hypertarget{class_cell_ac008158796a0bfdf37be2f26eff651ef}\label{class_cell_ac008158796a0bfdf37be2f26eff651ef} 
+int {\bfseries x}
+\item 
+\Hypertarget{class_cell_ab99a0cead05c6b8129ddf3231b11c1ad}\label{class_cell_ab99a0cead05c6b8129ddf3231b11c1ad} 
+int {\bfseries y}
+\item 
+\Hypertarget{class_cell_a6b9fe31469c1524ed169101d5097cdf8}\label{class_cell_a6b9fe31469c1524ed169101d5097cdf8} 
+bool {\bfseries revealed}
+\item 
+\Hypertarget{class_cell_a593898dc074bfdc46883f2976292e4d2}\label{class_cell_a593898dc074bfdc46883f2976292e4d2} 
+bool {\bfseries flagged}
+\item 
+\Hypertarget{class_cell_a47d74fdf0cc74594d54880da7e182890}\label{class_cell_a47d74fdf0cc74594d54880da7e182890} 
+bool {\bfseries clicked}
+\item 
+\Hypertarget{class_cell_a54f4ebcde5e0d56037a62ef2dcbbde05}\label{class_cell_a54f4ebcde5e0d56037a62ef2dcbbde05} 
+int {\bfseries left}
+\item 
+\Hypertarget{class_cell_a8b06dd7d7a503b7d4c0ec7db66694cda}\label{class_cell_a8b06dd7d7a503b7d4c0ec7db66694cda} 
+int {\bfseries right}
+\item 
+\Hypertarget{class_cell_a21ecb8f465141df2198e3582d626100d}\label{class_cell_a21ecb8f465141df2198e3582d626100d} 
+std\+::map$<$ std\+::string, sf\+::\+Color $>$ \texorpdfstring{$\ast$}{*} {\bfseries theme}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_cell_a690fe562870213e83bc9980d1640b589}\index{Cell@{Cell}!Cell@{Cell}}
+\index{Cell@{Cell}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{Cell()}{Cell()}}
+{\footnotesize\ttfamily \label{class_cell_a690fe562870213e83bc9980d1640b589} 
+Cell\+::\+Cell (\begin{DoxyParamCaption}\item[{sf\+::\+Texture \texorpdfstring{$\ast$}{*}}]{sprite\+Sheet}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{float}]{grid\+Size}{, }\item[{std\+::map$<$ std\+::string, sf\+::\+Color $>$ \texorpdfstring{$\ast$}{*}}]{theme}{}\end{DoxyParamCaption})}
+
+\doxylink{class_cell}{Cell} constructor 
+\begin{DoxyParams}{Parameters}
+{\em sprite\+Sheet} & pointer to the spritesheet texture \\
+\hline
+{\em x} & x grid cords \\
+\hline
+{\em y} & y grid cords \\
+\hline
+{\em grid\+Size} & \\
+\hline
+{\em theme} & active theme \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_cell_a6c6a811ec828b4a0ac022578f49f9e1a}\index{Cell@{Cell}!changeSprite@{changeSprite}}
+\index{changeSprite@{changeSprite}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{changeSprite()}{changeSprite()}}
+{\footnotesize\ttfamily \label{class_cell_a6c6a811ec828b4a0ac022578f49f9e1a} 
+void Cell\+::change\+Sprite (\begin{DoxyParamCaption}\item[{int}]{spriteI}{}\end{DoxyParamCaption})}
+
+Changes texture the one at the given index 
+\begin{DoxyParams}{Parameters}
+{\em spriteI} & sprite index on the sprite sheet \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cell_a6c6a811ec828b4a0ac022578f49f9e1a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_cell_a8670f7a9554fb177f79a315d1a4bd369}\index{Cell@{Cell}!drawCell@{drawCell}}
+\index{drawCell@{drawCell}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{drawCell()}{drawCell()}}
+{\footnotesize\ttfamily \label{class_cell_a8670f7a9554fb177f79a315d1a4bd369} 
+void Cell\+::draw\+Cell (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \texorpdfstring{$\ast$}{*}}]{target}{}\end{DoxyParamCaption})}
+
+Renders the cell 
+\begin{DoxyParams}{Parameters}
+{\em target} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cell_a8670f7a9554fb177f79a315d1a4bd369_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_cell_ab42024d2ae9a7de9d24790ed2a8ff849}\index{Cell@{Cell}!flag@{flag}}
+\index{flag@{flag}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{flag()}{flag()}}
+{\footnotesize\ttfamily \label{class_cell_ab42024d2ae9a7de9d24790ed2a8ff849} 
+virtual void Cell\+::flag (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_board}{Board}} \texorpdfstring{$\ast$}{*}}]{board}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Flags the cell 
+\begin{DoxyParams}{Parameters}
+{\em board} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_bomb_cell_a4d84cdf93d2b1e3a3f1bae71ad352844}{Bomb\+Cell}}, \mbox{\hyperlink{class_num_cell_a2f148dab998dfd13bb47a7342f7691c9}{Num\+Cell}}, and \mbox{\hyperlink{class_zero_cell_ad4b9658060deefe25810749e603ac806}{Zero\+Cell}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cell_ab42024d2ae9a7de9d24790ed2a8ff849_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_cell_af2d6864d97383af84e44e6664d1e02e4}\index{Cell@{Cell}!getFlagged@{getFlagged}}
+\index{getFlagged@{getFlagged}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{getFlagged()}{getFlagged()}}
+{\footnotesize\ttfamily \label{class_cell_af2d6864d97383af84e44e6664d1e02e4} 
+bool Cell\+::get\+Flagged (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns true if if the cell is flagged \begin{DoxyReturn}{Returns}
+flagged 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cell_af2d6864d97383af84e44e6664d1e02e4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_cell_a6dab60123b03ce9ef114705034cfd5ad}\index{Cell@{Cell}!getRevealed@{getRevealed}}
+\index{getRevealed@{getRevealed}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{getRevealed()}{getRevealed()}}
+{\footnotesize\ttfamily \label{class_cell_a6dab60123b03ce9ef114705034cfd5ad} 
+bool Cell\+::get\+Revealed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns true if the cell is revealed \begin{DoxyReturn}{Returns}
+revealed 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cell_a6dab60123b03ce9ef114705034cfd5ad_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_cell_a6a4c5cadf6386ca1c0bbfbc0ec225a50}\index{Cell@{Cell}!getType@{getType}}
+\index{getType@{getType}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{class_cell_a6a4c5cadf6386ca1c0bbfbc0ec225a50} 
+int Cell\+::get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the cell\textquotesingle{}s type \begin{DoxyReturn}{Returns}
+type 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cell_a6a4c5cadf6386ca1c0bbfbc0ec225a50_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_cell_a477b67ea9b48d5fcd995fdedaa788497}\index{Cell@{Cell}!loadCell@{loadCell}}
+\index{loadCell@{loadCell}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{loadCell()}{loadCell()}}
+{\footnotesize\ttfamily \label{class_cell_a477b67ea9b48d5fcd995fdedaa788497} 
+void Cell\+::load\+Cell (\begin{DoxyParamCaption}\item[{bool}]{revealed}{, }\item[{bool}]{flagged}{, }\item[{int}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the cells params to the given values 
+\begin{DoxyParams}{Parameters}
+{\em revealed} & \\
+\hline
+{\em flagged} & \\
+\hline
+{\em value} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_num_cell_a0f056d6f37da2d504de65d3ffe359bf6}{Num\+Cell}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{class_cell_a477b67ea9b48d5fcd995fdedaa788497_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{class_cell_a477b67ea9b48d5fcd995fdedaa788497_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_cell_a0b26deaafe05eeaf3d4e86cca685a97a}\index{Cell@{Cell}!reveal@{reveal}}
+\index{reveal@{reveal}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{reveal()}{reveal()}}
+{\footnotesize\ttfamily \label{class_cell_a0b26deaafe05eeaf3d4e86cca685a97a} 
+virtual void Cell\+::reveal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_board}{Board}} \texorpdfstring{$\ast$}{*}}]{board}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Reveals the cell 
+\begin{DoxyParams}{Parameters}
+{\em board} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_bomb_cell_a2812e4e3fcfd8c43fb5666dfdf6db9b8}{Bomb\+Cell}}, \mbox{\hyperlink{class_num_cell_a4a700fb9fbaafaeb43923eb732979e32}{Num\+Cell}}, and \mbox{\hyperlink{class_zero_cell_a1e8692497a5afc7ee8430ee88812ff6b}{Zero\+Cell}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cell_a0b26deaafe05eeaf3d4e86cca685a97a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_cell_a3b3e8d69751ace46b097f64e2d174c43}\index{Cell@{Cell}!update@{update}}
+\index{update@{update}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_cell_a3b3e8d69751ace46b097f64e2d174c43} 
+void Cell\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2i}]{mouse\+Pos}{, }\item[{\mbox{\hyperlink{class_board}{Board}} \texorpdfstring{$\ast$}{*}}]{board}{}\end{DoxyParamCaption})}
+
+Updates the cell 
+\begin{DoxyParams}{Parameters}
+{\em mouse\+Pos} & \\
+\hline
+{\em board} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{class_cell_a3b3e8d69751ace46b097f64e2d174c43_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cell_a3b3e8d69751ace46b097f64e2d174c43_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Cell.\+h\item 
+src/Cell.\+cpp\end{DoxyCompactItemize}

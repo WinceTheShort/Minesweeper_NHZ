@@ -1,0 +1,32 @@
+\doxysection{Num\+Cell.\+h}
+\hypertarget{_num_cell_8h_source}{}\label{_num_cell_8h_source}\index{src/NumCell.h@{src/NumCell.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ wince\ on\ 2024.\ 05.\ 22..}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ NUMCELL\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ NUMCELL\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Cell.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Board.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_board}{Board}};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_num_cell}{NumCell}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_cell}{Cell}}\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ value;}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_num_cell_ad7dc8bc2c60a330c8207fd4b34b086a0}{NumCell}}(sf::Texture*\ spriteSheet,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{float}\ gridSize,\ \textcolor{keywordtype}{int}\ value,\ std::map<std::string,\ sf::Color>*\ theme);}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_num_cell}{\string~NumCell}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_num_cell_a0f056d6f37da2d504de65d3ffe359bf6}{loadCell}}(\textcolor{keywordtype}{bool}\ revealed,\ \textcolor{keywordtype}{bool}\ flagged,\ \textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_num_cell_a4a700fb9fbaafaeb43923eb732979e32}{reveal}}(\mbox{\hyperlink{class_board}{Board}}*\ board);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_num_cell_a2f148dab998dfd13bb47a7342f7691c9}{flag}}(\mbox{\hyperlink{class_board}{Board}}*\ board);}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//NUMCELL\_H}}
+
+\end{DoxyCode}

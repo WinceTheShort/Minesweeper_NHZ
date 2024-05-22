@@ -1,0 +1,106 @@
+\doxysection{State\+Interfaces.\+hpp}
+\hypertarget{_state_interfaces_8hpp_source}{}\label{_state_interfaces_8hpp_source}\index{src/StateInterfaces.hpp@{src/StateInterfaces.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Vince\ on\ 2024.\ 04.\ 30..}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ SFML\_NHZ\_STATEINTERFACES\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ SFML\_NHZ\_STATEINTERFACES\_HPP}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}State.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{//Button\ interface}}
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classi_button}{iButton}}:\ \textcolor{keyword}{virtual}\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_state}{State}}\{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00013\ \ \ \ \ std::map<std::string,\ Button*>\ buttons;}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ initButtons()\ =\ 0;\ \textcolor{comment}{//initializes\ buttons}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ handleButtons()\ =\ 0;\ \textcolor{comment}{//handles\ buttons}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classi_button_ab94f5288f1aa0211ec54ad9196fd81dd}{updateButtons}}()\{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&it\ :\ this-\/>buttons)}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ it.second-\/>update(sf::Vector2f(this-\/>mousePosWindow.x,\ this-\/>mousePosWindow.y));}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ handleButtons();}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classi_button_ab1d64767c7351dcb4118a4582ccee07f}{renderButtons}}(sf::RenderTarget\ *target)\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&it\ :\ this-\/>buttons)}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ it.second-\/>render(target);}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classi_button_af531b697d64b057d08fb136c7ed03741}{deleteButtons}}()\{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ this-\/>buttons.begin();}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (it\ =\ this-\/>buttons.begin();\ it\ !=\ this-\/>buttons.end();\ ++it)\{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ it-\/>second;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{comment}{//Slider\ interface}}
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classi_slider}{iSlider}}:\ \textcolor{keyword}{virtual}\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_state}{State}}\{}
+\DoxyCodeLine{00043\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00044\ \ \ \ \ std::map<std::string,\ Slider*>\ sliders;}
+\DoxyCodeLine{00045\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ initSliders()\ =\ 0;\ \textcolor{comment}{//initializes\ slider}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ handleSliders()\ =\ 0;\ \textcolor{comment}{//handles\ sliders}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classi_slider_ae474c6580d5ef279faa8579e35bcc5c0}{updateSliders}}()\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&it\ :\ this-\/>sliders)}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ it.second-\/>update(this-\/>mousePosView);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ handleSliders();}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classi_slider_a485f323be4b5847302f4e44b545d69f3}{renderSliders}}(sf::RenderTarget\ *target)\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&it\ :\ this-\/>sliders)}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ it.second-\/>render(target);}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classi_slider_a0e05437dea40c86f716bf4a54c83a0ac}{deleteSliders}}()\{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ this-\/>sliders.begin();}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (it\ =\ this-\/>sliders.begin();\ it\ !=\ this-\/>sliders.end();\ ++it)\{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ it-\/>second;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{comment}{//Stepper\ interface}}
+\DoxyCodeLine{00073\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classi_stepper}{iStepper}}:\ \textcolor{keyword}{virtual}\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_state}{State}}\{}
+\DoxyCodeLine{00074\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00075\ \ \ \ \ std::map<std::string,\ Stepper*>\ steppers;}
+\DoxyCodeLine{00076\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ initSteppers()\ =\ 0;\ \textcolor{comment}{//Initializes\ the\ steppers}}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ handleSteppers()\ =\ 0;\ \textcolor{comment}{//Handles\ the\ steppers}}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classi_stepper_a25040549fe9aca127419ea862f0acb96}{updateSteppers}}()\{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&it\ :\ this-\/>steppers)}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ it.second-\/>update(this-\/>mousePosView);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ handleSteppers();}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classi_stepper_a709ba2e07e5b05411d8a317f45133edc}{renderSteppers}}(sf::RenderTarget\ *target)\{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&it\ :\ this-\/>steppers)}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ it.second-\/>render(target);}
+\DoxyCodeLine{00091\ \ \ \ \ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classi_stepper_ad4215ccb851cfdd9237ad38980fdc083}{deleteSteppers}}()\{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ this-\/>steppers.begin();}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (it\ =\ this-\/>steppers.begin();\ it\ !=\ this-\/>steppers.end();\ ++it)\{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ it-\/>second;}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{comment}{//Stores\ the\ games\ parameters}}
+\DoxyCodeLine{00104\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_difficulty}{Difficulty}}\{}
+\DoxyCodeLine{00105\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{int}\ columns,\ rows,\ bombs;}
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{class_difficulty}{Difficulty}}(\textcolor{keywordtype}{int}\ columns,\ \textcolor{keywordtype}{int}\ rows,\ \textcolor{keywordtype}{int}\ bombs):}
+\DoxyCodeLine{00108\ \ \ \ \ columns(columns),\ rows(rows),\ bombs(bombs)\{\}}
+\DoxyCodeLine{00109\ \};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//SFML\_NHZ\_STATEINTERFACES\_HPP}}
+
+\end{DoxyCode}

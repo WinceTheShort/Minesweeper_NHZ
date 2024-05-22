@@ -1,0 +1,259 @@
+\doxysection{Main\+Menu\+State Class Reference}
+\hypertarget{class_main_menu_state}{}\label{class_main_menu_state}\index{MainMenuState@{MainMenuState}}
+
+
+Inheritance diagram for Main\+Menu\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{class_main_menu_state__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Main\+Menu\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{class_main_menu_state__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_main_menu_state_a31cacbe566826c561a46e4e361827aba}{Main\+Menu\+State}} (sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*}window, std\+::map$<$ std\+::string, int $>$ \texorpdfstring{$\ast$}{*}supported\+Keys, std\+::stack$<$ \mbox{\hyperlink{class_state}{State}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*}states, std\+::map$<$ std\+::string, std\+::map$<$ std\+::string, sf\+::\+Color $>$ $>$ \texorpdfstring{$\ast$}{*}color\+Themes, std\+::string active\+Theme)
+\item 
+void \mbox{\hyperlink{class_main_menu_state_ae78e6f00cdc87a29cb8cf997ebf33cd9}{end\+State}} () override
+\begin{DoxyCompactList}\small\item\em Performs any actions needed before exiting the state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_menu_state_a1de145c6e5a0d58c175bf88d9380f940}{handle\+Input}} (const float \&dt) override
+\item 
+void \mbox{\hyperlink{class_main_menu_state_ab3560e3f3cf7d4fdf5797d4e04fc5452}{handle\+Buttons}} () override
+\begin{DoxyCompactList}\small\item\em Performs the actions needed when buttons are pressed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_menu_state_adc03f42c66df40ffce5e811b5b6c0642}{handle\+Steppers}} () override
+\begin{DoxyCompactList}\small\item\em Handles steppers. \end{DoxyCompactList}\item 
+\Hypertarget{class_main_menu_state_aa8b13028af306cb62ab4837086ba34a4}\label{class_main_menu_state_aa8b13028af306cb62ab4837086ba34a4} 
+void {\bfseries update\+Colors} ()
+\begin{DoxyCompactList}\small\item\em Updates all of the rendered objects color themes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_menu_state_a5802eb565dc92febf3480d643a11e699}{update}} (const float \&dt) override
+\item 
+void \mbox{\hyperlink{class_main_menu_state_a343f2f93b5fe14251f425b0709bf43ba}{render}} (sf\+::\+Render\+Target \texorpdfstring{$\ast$}{*}target=nullptr) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classi_button}{i\+Button}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries update\+Buttons} ()
+\begin{DoxyCompactList}\small\item\em Calls the all of the existing buttons\textquotesingle{} update function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classi_button_ab1d64767c7351dcb4118a4582ccee07f}{render\+Buttons}} (sf\+::\+Render\+Target \texorpdfstring{$\ast$}{*}target)
+\item 
+void {\bfseries delete\+Buttons} ()
+\begin{DoxyCompactList}\small\item\em Deletes the allocated buttons. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_state}{State}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_state_a970569fe825bb7cc18f48fecf4f1b9d1}{State}} (sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*}window, std\+::map$<$ std\+::string, int $>$ \texorpdfstring{$\ast$}{*}supported\+Keys, std\+::stack$<$ \mbox{\hyperlink{class_state}{State}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*}states)
+\item 
+bool \mbox{\hyperlink{class_state_ac393ab9ba1ab81ce46c4b6dc16471e0c}{get\+Quit}} () const
+\item 
+virtual void {\bfseries check\+For\+Quit} ()
+\begin{DoxyCompactList}\small\item\em Ckecks if user hit the quit keybind and sets the quit boolean accordingly. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_state_a55cd17e1b46e2a7345f3b98f01c123b8}{update\+Mouse\+Positions}} ()
+\begin{DoxyCompactList}\small\item\em Updates the mouse positions. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_state_aab3cee02e9f30dea69b8cf519368124e}{render\+Debug}} (sf\+::\+Render\+Target \texorpdfstring{$\ast$}{*}target)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classi_stepper}{i\+Stepper}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries update\+Steppers} ()
+\begin{DoxyCompactList}\small\item\em Calls all of the existing steppers update functions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classi_stepper_a709ba2e07e5b05411d8a317f45133edc}{render\+Steppers}} (sf\+::\+Render\+Target \texorpdfstring{$\ast$}{*}target)
+\item 
+void {\bfseries delete\+Steppers} ()
+\begin{DoxyCompactList}\small\item\em Deleste the allocated steppers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classi_button}{i\+Button}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{class_button}{Button}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries buttons}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_state}{State}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::stack$<$ \mbox{\hyperlink{class_state}{State}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} {\bfseries states}
+\item 
+sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*} {\bfseries window}
+\item 
+std\+::map$<$ std\+::string, int $>$ \texorpdfstring{$\ast$}{*} {\bfseries supported\+Keys}
+\item 
+std\+::map$<$ std\+::string, int $>$ {\bfseries keybinds}
+\item 
+sf\+::\+Font {\bfseries font}
+\item 
+int {\bfseries quit\+State}
+\item 
+bool {\bfseries quit}
+\item 
+sf\+::\+Vector2i {\bfseries mouse\+Pos\+Screen}
+\item 
+sf\+::\+Vector2i {\bfseries mouse\+Pos\+Window}
+\item 
+sf\+::\+Vector2f {\bfseries mouse\+Pos\+View}
+\item 
+std\+::vector$<$ sf\+::\+Texture \texorpdfstring{$\ast$}{*} $>$ {\bfseries textures}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classi_stepper}{i\+Stepper}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{class_stepper}{Stepper}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries steppers}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_main_menu_state_a31cacbe566826c561a46e4e361827aba}\index{MainMenuState@{MainMenuState}!MainMenuState@{MainMenuState}}
+\index{MainMenuState@{MainMenuState}!MainMenuState@{MainMenuState}}
+\doxysubsubsection{\texorpdfstring{MainMenuState()}{MainMenuState()}}
+{\footnotesize\ttfamily \label{class_main_menu_state_a31cacbe566826c561a46e4e361827aba} 
+Main\+Menu\+State\+::\+Main\+Menu\+State (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*}}]{window}{, }\item[{std\+::map$<$ std\+::string, int $>$ \texorpdfstring{$\ast$}{*}}]{supported\+Keys}{, }\item[{std\+::stack$<$ \mbox{\hyperlink{class_state}{State}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*}}]{states}{, }\item[{std\+::map$<$ std\+::string, std\+::map$<$ std\+::string, sf\+::\+Color $>$ $>$ \texorpdfstring{$\ast$}{*}}]{color\+Themes}{, }\item[{std\+::string}]{active\+Theme}{}\end{DoxyParamCaption})}
+
+Main menu state constructor 
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+{\em supported\+Keys} & \\
+\hline
+{\em states} & pointer to the states stack \\
+\hline
+{\em color\+Themes} & pointer to the color themes map \\
+\hline
+{\em active\+Theme} & the name of the active theme \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_main_menu_state_ae78e6f00cdc87a29cb8cf997ebf33cd9}\index{MainMenuState@{MainMenuState}!endState@{endState}}
+\index{endState@{endState}!MainMenuState@{MainMenuState}}
+\doxysubsubsection{\texorpdfstring{endState()}{endState()}}
+{\footnotesize\ttfamily \label{class_main_menu_state_ae78e6f00cdc87a29cb8cf997ebf33cd9} 
+void Main\+Menu\+State\+::end\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Performs any actions needed before exiting the state. 
+
+
+
+Implements \mbox{\hyperlink{class_state_a5f04f332b750c953508116d6571b137d}{State}}.
+
+\Hypertarget{class_main_menu_state_ab3560e3f3cf7d4fdf5797d4e04fc5452}\index{MainMenuState@{MainMenuState}!handleButtons@{handleButtons}}
+\index{handleButtons@{handleButtons}!MainMenuState@{MainMenuState}}
+\doxysubsubsection{\texorpdfstring{handleButtons()}{handleButtons()}}
+{\footnotesize\ttfamily \label{class_main_menu_state_ab3560e3f3cf7d4fdf5797d4e04fc5452} 
+void Main\+Menu\+State\+::handle\+Buttons (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Performs the actions needed when buttons are pressed. 
+
+
+
+Implements \mbox{\hyperlink{classi_button}{i\+Button}}.
+
+\Hypertarget{class_main_menu_state_a1de145c6e5a0d58c175bf88d9380f940}\index{MainMenuState@{MainMenuState}!handleInput@{handleInput}}
+\index{handleInput@{handleInput}!MainMenuState@{MainMenuState}}
+\doxysubsubsection{\texorpdfstring{handleInput()}{handleInput()}}
+{\footnotesize\ttfamily \label{class_main_menu_state_a1de145c6e5a0d58c175bf88d9380f940} 
+void Main\+Menu\+State\+::handle\+Input (\begin{DoxyParamCaption}\item[{const float \&}]{dt}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Handles the inputs 
+\begin{DoxyParams}{Parameters}
+{\em dt} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_state_acdec3f7742c326aafb5eb3e89136dc0b}{State}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_menu_state_a1de145c6e5a0d58c175bf88d9380f940_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_menu_state_a1de145c6e5a0d58c175bf88d9380f940_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_main_menu_state_adc03f42c66df40ffce5e811b5b6c0642}\index{MainMenuState@{MainMenuState}!handleSteppers@{handleSteppers}}
+\index{handleSteppers@{handleSteppers}!MainMenuState@{MainMenuState}}
+\doxysubsubsection{\texorpdfstring{handleSteppers()}{handleSteppers()}}
+{\footnotesize\ttfamily \label{class_main_menu_state_adc03f42c66df40ffce5e811b5b6c0642} 
+void Main\+Menu\+State\+::handle\+Steppers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handles steppers. 
+
+
+
+Implements \mbox{\hyperlink{classi_stepper}{i\+Stepper}}.
+
+\Hypertarget{class_main_menu_state_a343f2f93b5fe14251f425b0709bf43ba}\index{MainMenuState@{MainMenuState}!render@{render}}
+\index{render@{render}!MainMenuState@{MainMenuState}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{class_main_menu_state_a343f2f93b5fe14251f425b0709bf43ba} 
+void Main\+Menu\+State\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \texorpdfstring{$\ast$}{*}}]{target}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Renders state elements 
+\begin{DoxyParams}{Parameters}
+{\em target} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_state_aa1f36587befc2c03c4033366e5000d2c}{State}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_menu_state_a343f2f93b5fe14251f425b0709bf43ba_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_main_menu_state_a5802eb565dc92febf3480d643a11e699}\index{MainMenuState@{MainMenuState}!update@{update}}
+\index{update@{update}!MainMenuState@{MainMenuState}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_main_menu_state_a5802eb565dc92febf3480d643a11e699} 
+void Main\+Menu\+State\+::update (\begin{DoxyParamCaption}\item[{const float \&}]{dt}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Updtates the state, calls other update functions 
+\begin{DoxyParams}{Parameters}
+{\em dt} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_state_a2c2021d448defc57111202b74ed0aaa0}{State}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_menu_state_a5802eb565dc92febf3480d643a11e699_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Main\+Menu\+State.\+h\item 
+src/Main\+Menu\+State.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,65 @@
+\doxysection{Board.\+h}
+\hypertarget{_board_8h_source}{}\label{_board_8h_source}\index{src/Board.h@{src/Board.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ wince\ on\ 2024.\ 05.\ 05..}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ SFML\_NHZ\_BOARD\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ SFML\_NHZ\_BOARD\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}BombCell.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}ZeroCell.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}NumCell.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_cell}{Cell}};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_board}{Board}}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{typedef}\ std::mt19937\ RNG;}
+\DoxyCodeLine{00017\ \ \ \ \ uint32\_t\ seedVal;}
+\DoxyCodeLine{00018\ \ \ \ \ RNG\ rng;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_difficulty}{Difficulty}}*\ diff;}
+\DoxyCodeLine{00021\ \ \ \ \ sf::Texture\ *cellSprites;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{float}\ gridSize;}
+\DoxyCodeLine{00023\ \ \ \ \ sf::View*\ view;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ gameOverBool,\ started,\ left;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ goodFlag,\ badFlag,\ time;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ std::map<std::string,\ sf::Color>*\ theme;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_cell}{Cell}}***\ boardCells;\ \textcolor{comment}{//Stores\ cells}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ initBoard();}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ setBoard(sf::Vector2i\ mousePos);}
+\DoxyCodeLine{00036\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ sf::RectangleShape\ boardBackground;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_board_a7b07c6a2365a135df1f799a569e9c33a}{Board}}(\mbox{\hyperlink{class_difficulty}{Difficulty}}*\ diff,\ \textcolor{keywordtype}{float}\ gridSize,\ sf::View*\ view,\ sf::Texture*\ cellSprites,std::map<std::string,\ sf::Color>*\ theme);}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{class_board_a7b07c6a2365a135df1f799a569e9c33a}{Board}}(\mbox{\hyperlink{class_difficulty}{Difficulty}}*\ diff,\ \textcolor{keywordtype}{float}\ gridSize,\ sf::View*\ view,\ sf::Texture*\ cellSprites,std::map<std::string,\ sf::Color>*\ theme,\ \textcolor{keywordtype}{bool}\ load);}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{class_board}{\string~Board}}();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_board_a81843ace1ecf7cc68ebb731215584950}{checkWinCondition}}();}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_board_aded6337bf65cab572cfa43998ff47ad9}{flagged}}(\textcolor{keywordtype}{bool}\ correct);}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_board_a119be0d6b6c6bd5448a1249aebd3426b}{unflagged}}(\textcolor{keywordtype}{bool}\ correct);}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_board_adc4ecf38a22ee2f66f70238763ce790a}{validCoords}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\{\textcolor{keywordflow}{return}\ (x\ >=\ 0\ \&\&\ y\ >=\ 0\ \&\&\ x\ <\ diff-\/>columns\ \&\&\ y\ <\ diff-\/>rows)\ \&\&\ boardCells[x][y]\ !=\ \textcolor{keyword}{nullptr};\}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_board_a75b92e60e0cc5b3322c6dcb054e6fd61}{checkSurroundings}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ forWhat);}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_board_a319443b425cce3fd9522edcbff9ac2e8}{getStarted}}()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ started;\}}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_board_a5a04f0691794aa12d43d338866933511}{setTime}}(\textcolor{keywordtype}{int}\ time)\ \{this-\/>time\ =\ time;\}}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_board_a1a79989f625629225f8979cb0fa1e0e6}{getTime}}()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ time;\}}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_board_a43936ab6276a1b71a57e64b363a8f558}{getRemainigFlagNum}}();}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_board_a5a6d3e4873393cca915e1b99f58962e0}{saveGame}}();}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_board_a4c60e0bcff24f72568e52c1ea919439a}{setGameOver}}(\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_board_ae69593567ae7275399170538c96bfa21}{gameOver}})\{gameOverBool\ =\ \mbox{\hyperlink{class_board_ae69593567ae7275399170538c96bfa21}{gameOver}};\}}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_board_ae69593567ae7275399170538c96bfa21}{gameOver}}()\textcolor{keyword}{\ const}\{\textcolor{keywordflow}{return}\ gameOverBool;\}}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_board_a47d0e51aa2f0e1bb8b6d86afc778dcf2}{revealBombs}}();}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_board_a6430cd9bb89b7ba270e0d6fab0720d01}{revealSurroundings}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_board_a743b7d4036ad50428f7f104a906d9716}{updateBoard}}(sf::Vector2i\ mousePosGrid);}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_board_ae4b851f3ddb70cdf327b20b0388d6e74}{drawBoard}}(sf::RenderTarget*\ target);}
+\DoxyCodeLine{00109\ \};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//SFML\_NHZ\_BOARD\_H}}
+
+\end{DoxyCode}

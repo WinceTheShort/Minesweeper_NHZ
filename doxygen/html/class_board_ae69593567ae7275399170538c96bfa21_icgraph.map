@@ -1,0 +1,13 @@
+<map id="Board::gameOver" name="Board::gameOver">
+<area shape="rect" id="Node000001" title=" " alt="" coords="687,31,809,57"/>
+<area shape="rect" id="Node000002" href="$class_game_state.html#ad0d4f314f103697df367999942230c9c" title="Checks if the end game conditions are met and sets the win and end bool accordingly." alt="" coords="397,5,639,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="672,38,640,35,640,29,672,33"/>
+<area shape="rect" id="Node000005" href="$class_board.html#a4c60e0bcff24f72568e52c1ea919439a" title=" " alt="" coords="447,56,589,83"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="672,55,590,64,589,59,672,50"/>
+<area shape="rect" id="Node000003" href="$class_game_state.html#a404b264fb0a1bf4231f16f8d2cdc4506" title=" " alt="" coords="188,5,349,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="381,21,349,21,349,16,381,16"/>
+<area shape="rect" id="Node000004" href="$class_game_state.html#a7f853d3fd771d00495f20afa8d47ad34" title=" " alt="" coords="5,5,140,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="172,21,140,21,140,16,172,16"/>
+<area shape="rect" id="Node000006" href="$class_bomb_cell.html#a2812e4e3fcfd8c43fb5666dfdf6db9b8" title=" " alt="" coords="209,56,328,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="431,72,328,72,328,67,431,67"/>
+</map>

@@ -1,0 +1,76 @@
+\doxysection{Cell.\+h}
+\hypertarget{_cell_8h_source}{}\label{_cell_8h_source}\index{src/Cell.h@{src/Cell.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ wince\ on\ 2024.\ 05.\ 05..}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ SFML\_NHZ\_CELL\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ SFML\_NHZ\_CELL\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}StateInterfaces.hpp"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{enum}\ \{ZERO\ =\ 0,\ HIDDEN\ =\ 9,\ BOMB\ =\ 10,\ FLAG\ =\ 11\};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_board}{Board}};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_cell}{Cell}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00016\ \ \ \ \ sf::RectangleShape\ sprite;}
+\DoxyCodeLine{00017\ \ \ \ \ sf::Texture*\ spriteSheet;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ type,\ x,\ y;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{bool}\ revealed,\ flagged,\ clicked;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ left,\ right;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ std::map<std::string,\ sf::Color>*\ theme;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_cell_a690fe562870213e83bc9980d1640b589}{Cell}}(sf::Texture*\ spriteSheet,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{float}\ gridSize,\ std::map<std::string,\ sf::Color>*\ theme);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_cell}{\string~Cell}}();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_cell_a6a4c5cadf6386ca1c0bbfbc0ec225a50}{getType}}()\textcolor{keyword}{\ const}\{\textcolor{keywordflow}{return}\ type;\}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_cell_af2d6864d97383af84e44e6664d1e02e4}{getFlagged}}()\textcolor{keyword}{\ const}\{\textcolor{keywordflow}{return}\ flagged;\}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_cell_a6dab60123b03ce9ef114705034cfd5ad}{getRevealed}}()\textcolor{keyword}{\ const}\{\textcolor{keywordflow}{return}\ revealed;\}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cell_a6c6a811ec828b4a0ac022578f49f9e1a}{changeSprite}}(\textcolor{keywordtype}{int}\ spriteI);}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cell_a3b3e8d69751ace46b097f64e2d174c43}{update}}(sf::Vector2i\ mousePos,\ \mbox{\hyperlink{class_board}{Board}}*\ board);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cell_a8670f7a9554fb177f79a315d1a4bd369}{drawCell}}(sf::RenderTarget*\ target);}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cell_a477b67ea9b48d5fcd995fdedaa788497}{loadCell}}(\textcolor{keywordtype}{bool}\ revealed,\ \textcolor{keywordtype}{bool}\ flagged,\ \textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cell_a0b26deaafe05eeaf3d4e86cca685a97a}{reveal}}(\mbox{\hyperlink{class_board}{Board}}*\ board)\ =\ 0;}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cell_ab42024d2ae9a7de9d24790ed2a8ff849}{flag}}(\mbox{\hyperlink{class_board}{Board}}*\ board)\ =\ 0;}
+\DoxyCodeLine{00065\ \};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{comment}{/*class\ BombCell:\ public\ Cell\{}}
+\DoxyCodeLine{00068\ \textcolor{comment}{public:}}
+\DoxyCodeLine{00075\ \ \ \ \ BombCell(sf::Texture*\ spriteSheet,\ int\ x,\ int\ y,\ float\ gridSize,\ std::map<std::string,\ sf::Color>*\ theme);}
+\DoxyCodeLine{00076\ \ \ \ \ \string~BombCell()\ override;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00080\ \ \ \ \ void\ reveal(Board*\ board)\ override;}
+\DoxyCodeLine{00083\ \ \ \ \ void\ flag(Board*\ board)\ override;}
+\DoxyCodeLine{00084\ \};*/}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{comment}{/*class\ ZeroCell:\ public\ Cell\ \{}}
+\DoxyCodeLine{00087\ \textcolor{comment}{public:}}
+\DoxyCodeLine{00094\ \ \ \ \ ZeroCell(sf::Texture*\ spriteSheet,\ int\ x,\ int\ y,\ float\ gridSize,\ std::map<std::string,\ sf::Color>*\ theme);}
+\DoxyCodeLine{00095\ \ \ \ \ \string~ZeroCell()\ override;}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00099\ \ \ \ \ void\ reveal(Board*\ board)\ override;}
+\DoxyCodeLine{00102\ \ \ \ \ void\ flag(Board*\ board)\ override;}
+\DoxyCodeLine{00103\ \};*/}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{comment}{/*class\ NumCell:\ public\ Cell\ \{}}
+\DoxyCodeLine{00106\ \textcolor{comment}{\ \ \ \ int\ value;}}
+\DoxyCodeLine{00107\ \textcolor{comment}{public:}}
+\DoxyCodeLine{00115\ \ \ \ \ NumCell(sf::Texture*\ spriteSheet,\ int\ x,\ int\ y,\ float\ gridSize,\ int\ value,\ std::map<std::string,\ sf::Color>*\ theme);}
+\DoxyCodeLine{00116\ \ \ \ \ \string~NumCell()\ override;}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00122\ \ \ \ \ void\ loadCell(bool\ revealed,\ bool\ flagged,\ int\ value)\ override;}
+\DoxyCodeLine{00125\ \ \ \ \ void\ reveal(Board*\ board)\ override;}
+\DoxyCodeLine{00128\ \ \ \ \ void\ flag(Board*\ board)\ override;}
+\DoxyCodeLine{00129\ \};*/}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//SFML\_NHZ\_CELL\_H}}
+
+\end{DoxyCode}

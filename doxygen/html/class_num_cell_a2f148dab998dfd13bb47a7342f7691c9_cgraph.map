@@ -1,0 +1,9 @@
+<map id="NumCell::flag" name="NumCell::flag">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,104,83"/>
+<area shape="rect" id="Node000002" href="$class_cell.html#a6c6a811ec828b4a0ac022578f49f9e1a" title=" " alt="" coords="152,5,279,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,53,155,35,157,40,100,58"/>
+<area shape="rect" id="Node000003" href="$class_board.html#aded6337bf65cab572cfa43998ff47ad9" title=" " alt="" coords="163,56,268,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="104,67,148,67,148,72,104,72"/>
+<area shape="rect" id="Node000004" href="$class_board.html#a119be0d6b6c6bd5448a1249aebd3426b" title=" " alt="" coords="156,107,275,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="100,81,157,99,155,104,99,86"/>
+</map>

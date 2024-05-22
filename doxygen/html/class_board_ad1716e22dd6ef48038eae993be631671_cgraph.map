@@ -1,0 +1,9 @@
+<map id="Board::Board" name="Board::Board">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,103,57"/>
+<area shape="rect" id="Node000002" href="$class_board.html#aded6337bf65cab572cfa43998ff47ad9" title=" " alt="" coords="151,5,255,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,33,135,28,136,33,104,38"/>
+<area shape="rect" id="Node000003" href="$class_cell.html#a477b67ea9b48d5fcd995fdedaa788497" title=" " alt="" coords="154,56,252,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="104,50,139,56,138,61,103,55"/>
+<area shape="rect" id="Node000004" href="$class_cell.html#a6c6a811ec828b4a0ac022578f49f9e1a" title=" " alt="" coords="303,56,430,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="252,67,287,67,287,72,252,72"/>
+</map>

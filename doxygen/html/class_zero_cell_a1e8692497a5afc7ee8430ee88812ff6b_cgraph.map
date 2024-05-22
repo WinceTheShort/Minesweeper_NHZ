@@ -1,0 +1,11 @@
+<map id="ZeroCell::reveal" name="ZeroCell::reveal">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,115,57"/>
+<area shape="rect" id="Node000002" href="$class_cell.html#a6c6a811ec828b4a0ac022578f49f9e1a" title=" " alt="" coords="185,5,313,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,34,169,27,170,32,116,39"/>
+<area shape="rect" id="Node000003" href="$class_board.html#a6430cd9bb89b7ba270e0d6fab0720d01" title=" " alt="" coords="163,56,335,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="116,49,148,53,147,58,115,54"/>
+<area shape="rect" id="Node000004" href="$class_cell.html#a0b26deaafe05eeaf3d4e86cca685a97a" title=" " alt="" coords="406,31,490,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="335,56,390,49,391,54,336,61"/>
+<area shape="rect" id="Node000005" href="$class_board.html#adc4ecf38a22ee2f66f70238763ce790a" title=" " alt="" coords="383,81,512,108"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="336,78,368,82,367,87,335,83"/>
+</map>

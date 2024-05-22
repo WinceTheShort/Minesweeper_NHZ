@@ -5,7 +5,9 @@
 #ifndef SFML_NHZ_BOARD_H
 #define SFML_NHZ_BOARD_H
 
-#include "Cell.h"
+#include "BombCell.h"
+#include "ZeroCell.h"
+#include "NumCell.h"
 #include <random>
 
 class Cell;

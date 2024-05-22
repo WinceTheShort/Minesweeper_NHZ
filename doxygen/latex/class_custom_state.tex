@@ -1,0 +1,254 @@
+\doxysection{Custom\+State Class Reference}
+\hypertarget{class_custom_state}{}\label{class_custom_state}\index{CustomState@{CustomState}}
+
+
+Inheritance diagram for Custom\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{class_custom_state__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Custom\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{class_custom_state__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_custom_state_ac21b05c5d5bf552beb1c7d12be4f70cc}{Custom\+State}} (sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*}window, std\+::map$<$ std\+::string, int $>$ \texorpdfstring{$\ast$}{*}supported\+Keys, std\+::stack$<$ \mbox{\hyperlink{class_state}{State}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*}states, std\+::map$<$ std\+::string, sf\+::\+Color $>$ \texorpdfstring{$\ast$}{*}theme)
+\item 
+void \mbox{\hyperlink{class_custom_state_a58c32df54e30f5972dfb70efcfe5ba29}{end\+State}} ()
+\begin{DoxyCompactList}\small\item\em Performs any actions neede before exiting the state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_custom_state_a9c9f0e2a75d7dbcec472cc4491674ad3}{handle\+Input}} (const float \&dt)
+\item 
+void \mbox{\hyperlink{class_custom_state_a61d66e801cc0b45a06f9a70f01fe7f9f}{handle\+Buttons}} ()
+\begin{DoxyCompactList}\small\item\em Performs actions when buttons are pressed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_custom_state_ae8c9ec2146b9047a3cfd2579eea59222}{handle\+Sliders}} ()
+\begin{DoxyCompactList}\small\item\em Performs actions when sliders are used. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_custom_state_ab7f4e87a641e869e25b70037f80d50cd}{update}} (const float \&dt)
+\item 
+void \mbox{\hyperlink{class_custom_state_a77cf26e5572612c02fb6966b9d5a8a94}{render}} (sf\+::\+Render\+Target \texorpdfstring{$\ast$}{*}target=nullptr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classi_button}{i\+Button}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries update\+Buttons} ()
+\begin{DoxyCompactList}\small\item\em Calls the all of the existing buttons\textquotesingle{} update function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classi_button_ab1d64767c7351dcb4118a4582ccee07f}{render\+Buttons}} (sf\+::\+Render\+Target \texorpdfstring{$\ast$}{*}target)
+\item 
+void {\bfseries delete\+Buttons} ()
+\begin{DoxyCompactList}\small\item\em Deletes the allocated buttons. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_state}{State}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_state_a970569fe825bb7cc18f48fecf4f1b9d1}{State}} (sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*}window, std\+::map$<$ std\+::string, int $>$ \texorpdfstring{$\ast$}{*}supported\+Keys, std\+::stack$<$ \mbox{\hyperlink{class_state}{State}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*}states)
+\item 
+bool \mbox{\hyperlink{class_state_ac393ab9ba1ab81ce46c4b6dc16471e0c}{get\+Quit}} () const
+\item 
+virtual void {\bfseries check\+For\+Quit} ()
+\begin{DoxyCompactList}\small\item\em Ckecks if user hit the quit keybind and sets the quit boolean accordingly. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_state_a55cd17e1b46e2a7345f3b98f01c123b8}{update\+Mouse\+Positions}} ()
+\begin{DoxyCompactList}\small\item\em Updates the mouse positions. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_state_aab3cee02e9f30dea69b8cf519368124e}{render\+Debug}} (sf\+::\+Render\+Target \texorpdfstring{$\ast$}{*}target)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classi_slider}{i\+Slider}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries update\+Sliders} ()
+\begin{DoxyCompactList}\small\item\em Calls all of the existing sliers\textquotesingle{} update funtions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classi_slider_a485f323be4b5847302f4e44b545d69f3}{render\+Sliders}} (sf\+::\+Render\+Target \texorpdfstring{$\ast$}{*}target)
+\item 
+void {\bfseries delete\+Sliders} ()
+\begin{DoxyCompactList}\small\item\em Deletes the allocated sliders. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classi_button}{i\+Button}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{class_button}{Button}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries buttons}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_state}{State}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::stack$<$ \mbox{\hyperlink{class_state}{State}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} {\bfseries states}
+\item 
+sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*} {\bfseries window}
+\item 
+std\+::map$<$ std\+::string, int $>$ \texorpdfstring{$\ast$}{*} {\bfseries supported\+Keys}
+\item 
+std\+::map$<$ std\+::string, int $>$ {\bfseries keybinds}
+\item 
+sf\+::\+Font {\bfseries font}
+\item 
+int {\bfseries quit\+State}
+\item 
+bool {\bfseries quit}
+\item 
+sf\+::\+Vector2i {\bfseries mouse\+Pos\+Screen}
+\item 
+sf\+::\+Vector2i {\bfseries mouse\+Pos\+Window}
+\item 
+sf\+::\+Vector2f {\bfseries mouse\+Pos\+View}
+\item 
+std\+::vector$<$ sf\+::\+Texture \texorpdfstring{$\ast$}{*} $>$ {\bfseries textures}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classi_slider}{i\+Slider}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{class_slider}{Slider}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries sliders}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_custom_state_ac21b05c5d5bf552beb1c7d12be4f70cc}\index{CustomState@{CustomState}!CustomState@{CustomState}}
+\index{CustomState@{CustomState}!CustomState@{CustomState}}
+\doxysubsubsection{\texorpdfstring{CustomState()}{CustomState()}}
+{\footnotesize\ttfamily \label{class_custom_state_ac21b05c5d5bf552beb1c7d12be4f70cc} 
+Custom\+State\+::\+Custom\+State (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*}}]{window}{, }\item[{std\+::map$<$ std\+::string, int $>$ \texorpdfstring{$\ast$}{*}}]{supported\+Keys}{, }\item[{std\+::stack$<$ \mbox{\hyperlink{class_state}{State}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*}}]{states}{, }\item[{std\+::map$<$ std\+::string, sf\+::\+Color $>$ \texorpdfstring{$\ast$}{*}}]{theme}{}\end{DoxyParamCaption})}
+
+Custom state constructor 
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+{\em supported\+Keys} & \\
+\hline
+{\em states} & pointer to the states stack \\
+\hline
+{\em theme} & active theme \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_custom_state_a58c32df54e30f5972dfb70efcfe5ba29}\index{CustomState@{CustomState}!endState@{endState}}
+\index{endState@{endState}!CustomState@{CustomState}}
+\doxysubsubsection{\texorpdfstring{endState()}{endState()}}
+{\footnotesize\ttfamily \label{class_custom_state_a58c32df54e30f5972dfb70efcfe5ba29} 
+void Custom\+State\+::end\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Performs any actions neede before exiting the state. 
+
+
+
+Implements \mbox{\hyperlink{class_state_a5f04f332b750c953508116d6571b137d}{State}}.
+
+\Hypertarget{class_custom_state_a61d66e801cc0b45a06f9a70f01fe7f9f}\index{CustomState@{CustomState}!handleButtons@{handleButtons}}
+\index{handleButtons@{handleButtons}!CustomState@{CustomState}}
+\doxysubsubsection{\texorpdfstring{handleButtons()}{handleButtons()}}
+{\footnotesize\ttfamily \label{class_custom_state_a61d66e801cc0b45a06f9a70f01fe7f9f} 
+void Custom\+State\+::handle\+Buttons (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Performs actions when buttons are pressed. 
+
+
+
+Implements \mbox{\hyperlink{classi_button}{i\+Button}}.
+
+\Hypertarget{class_custom_state_a9c9f0e2a75d7dbcec472cc4491674ad3}\index{CustomState@{CustomState}!handleInput@{handleInput}}
+\index{handleInput@{handleInput}!CustomState@{CustomState}}
+\doxysubsubsection{\texorpdfstring{handleInput()}{handleInput()}}
+{\footnotesize\ttfamily \label{class_custom_state_a9c9f0e2a75d7dbcec472cc4491674ad3} 
+void Custom\+State\+::handle\+Input (\begin{DoxyParamCaption}\item[{const float \&}]{dt}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Handles input 
+\begin{DoxyParams}{Parameters}
+{\em dt} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_state_acdec3f7742c326aafb5eb3e89136dc0b}{State}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{class_custom_state_a9c9f0e2a75d7dbcec472cc4491674ad3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_custom_state_a9c9f0e2a75d7dbcec472cc4491674ad3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_custom_state_ae8c9ec2146b9047a3cfd2579eea59222}\index{CustomState@{CustomState}!handleSliders@{handleSliders}}
+\index{handleSliders@{handleSliders}!CustomState@{CustomState}}
+\doxysubsubsection{\texorpdfstring{handleSliders()}{handleSliders()}}
+{\footnotesize\ttfamily \label{class_custom_state_ae8c9ec2146b9047a3cfd2579eea59222} 
+void Custom\+State\+::handle\+Sliders (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Performs actions when sliders are used. 
+
+
+
+Implements \mbox{\hyperlink{classi_slider}{i\+Slider}}.
+
+\Hypertarget{class_custom_state_a77cf26e5572612c02fb6966b9d5a8a94}\index{CustomState@{CustomState}!render@{render}}
+\index{render@{render}!CustomState@{CustomState}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{class_custom_state_a77cf26e5572612c02fb6966b9d5a8a94} 
+void Custom\+State\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \texorpdfstring{$\ast$}{*}}]{target}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Renders the state\textquotesingle{}s elements 
+\begin{DoxyParams}{Parameters}
+{\em target} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_state_aa1f36587befc2c03c4033366e5000d2c}{State}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_custom_state_a77cf26e5572612c02fb6966b9d5a8a94_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_custom_state_ab7f4e87a641e869e25b70037f80d50cd}\index{CustomState@{CustomState}!update@{update}}
+\index{update@{update}!CustomState@{CustomState}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_custom_state_ab7f4e87a641e869e25b70037f80d50cd} 
+void Custom\+State\+::update (\begin{DoxyParamCaption}\item[{const float \&}]{dt}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Updates the state 
+\begin{DoxyParams}{Parameters}
+{\em dt} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_state_a2c2021d448defc57111202b74ed0aaa0}{State}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_custom_state_ab7f4e87a641e869e25b70037f80d50cd_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Custom\+Diff\+State.\+h\item 
+src/Custom\+Diff\+State.\+cpp\end{DoxyCompactItemize}
