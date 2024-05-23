@@ -1,5 +1,6 @@
 #include "Game.h"
 #include "gtest_lite.h"
+#include "memtrace.h"
 
 
 int main()
@@ -45,19 +46,15 @@ int main()
         theme["Shadow"];
 
         ZeroCell zero_cell(&spriteSheet, 2, 2, 12, &theme);
-        EXPECT_EQ(ZERO, zero_cell.getType());
         EXPECT_EQ(false, zero_cell.getFlagged());
         EXPECT_EQ(false, zero_cell.getRevealed());
 
         NumCell num_cell(&spriteSheet, 2, 2, 12, 2, &theme);
-        EXPECT_EQ(2, num_cell.getType());
         num_cell.loadCell(true, true, 5);
-        EXPECT_EQ(5, num_cell.getType());
         EXPECT_EQ(true, num_cell.getFlagged());
         EXPECT_EQ(true, num_cell.getRevealed());
 
         BombCell bomb_cell(&spriteSheet, 2, 2, 12, &theme);
-        EXPECT_EQ(BOMB, bomb_cell.getType());
         EXPECT_EQ(false, bomb_cell.getFlagged());
         EXPECT_EQ(false, bomb_cell.getRevealed());
     }END

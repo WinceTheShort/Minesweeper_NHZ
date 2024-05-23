@@ -2,4 +2,4 @@ Rainforest
 BtnIdle 0 154 45 255
 BtnHover 0 116 34 255
 BtnActive 0 76 22 255
-Shadow 31 50 36 255
+Shadow 0 47 14 255

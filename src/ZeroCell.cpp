@@ -3,9 +3,9 @@
 //
 
 #include "ZeroCell.h"
+#include "memtrace.h"
 
 ZeroCell::ZeroCell(sf::Texture *spriteSheet, int x, int y, float gridSize, std::map<std::string, sf::Color>* theme) : Cell(spriteSheet, x, y, gridSize, theme) {
-    type = ZERO;
 }
 
 ZeroCell::~ZeroCell() {
@@ -42,4 +42,14 @@ void ZeroCell::flag(Board *board) {
             flagged = true;
         }
     }
+}
+
+void ZeroCell::saveCell(std::ostream* os)
+{
+    *os << 0;
+}
+
+int ZeroCell::isWhat(int what)
+{
+    return what == ZERO ? 1 : 0;
 }

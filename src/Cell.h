@@ -15,7 +15,7 @@ class Cell {
 protected:
     sf::RectangleShape sprite;
     sf::Texture* spriteSheet;
-    int type, x, y;
+    int x, y;
     bool revealed, flagged, clicked;
     int left, right;
 
@@ -32,9 +32,6 @@ public:
     Cell(sf::Texture* spriteSheet, int x, int y, float gridSize, std::map<std::string, sf::Color>* theme);
     virtual ~Cell();
 
-    /// Returns the cell's type
-    /// @return type
-    int getType() const{return type;}
     /// Returns true if if the cell is flagged
     /// @return flagged
     bool getFlagged() const{return flagged;}
@@ -65,6 +62,8 @@ public:
     /// Flags the cell
     /// @param board
     virtual void flag(Board* board) = 0;
+    virtual void saveCell(std::ostream* os) = 0;
+    virtual int isWhat(int what) = 0;
 };
 
 

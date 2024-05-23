@@ -3,9 +3,9 @@
 //
 
 #include "BombCell.h"
+#include "memtrace.h"
 
 BombCell::BombCell(sf::Texture *spriteSheet, int x, int y, float gridSize, std::map<std::string, sf::Color>* theme) : Cell(spriteSheet, x, y, gridSize, theme) {
-    type = BOMB;
 }
 
 BombCell::~BombCell() {
@@ -47,4 +47,14 @@ void BombCell::flag(Board *board) {
             flagged = true;
         }
     }
+}
+
+void BombCell::saveCell(std::ostream* os)
+{
+    *os << 9;
+}
+
+int BombCell::isWhat(int what)
+{
+    return what == BOMB ? 1 : 0;
 }

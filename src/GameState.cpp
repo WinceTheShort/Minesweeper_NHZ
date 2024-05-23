@@ -3,6 +3,7 @@
 //
 
 #include "GameState.h"
+#include "memtrace.h"
 
 void GameState::initFonts() {
     this->font.loadFromFile("../../src/Resources/minepixel.ttf");
@@ -87,7 +88,7 @@ correctFlag(0), wrongFlag(0), gameEnded(false), win(false), clock(0), theme(them
     gameOverText.setFillColor(sf::Color::Black);
     gameOverText.setCharacterSize(60);
     gameOverText.setString("Game Over");
-    gameOverText.setPosition(window->getSize().x/2 - youWinText.getGlobalBounds().width/2, 30);
+    gameOverText.setPosition(window->getSize().x/2 - gameOverText.getGlobalBounds().width/2, 30);
 
     //Sets clock text's parameters
     clockText.setFont(font);

@@ -3,6 +3,7 @@
 //
 
 #include "DifficultyState.h"
+#include "memtrace.h"
 
 void DifficultyState::initFonts() {
     this->font.loadFromFile("../../src/Resources/minepixel.ttf");

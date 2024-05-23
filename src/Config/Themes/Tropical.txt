@@ -1,0 +1,5 @@
+Tropical
+BtnIdle 255 158 29 255
+BtnHover 192 119 22 255
+BtnActive 126 78 14 255
+Shadow 79 48 9 255

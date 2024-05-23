@@ -28,6 +28,8 @@ public:
     /// Flags the zero cell
     /// @param board pointer to parent board
     void flag(Board* board);
+    void saveCell(std::ostream* os) override;
+    int isWhat(int what) override;
 };
 
 

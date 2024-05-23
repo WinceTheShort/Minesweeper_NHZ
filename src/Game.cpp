@@ -4,6 +4,7 @@
 
 #include "Game.h"
 #include <fstream>
+#include "memtrace.h"
 
 //Init
 

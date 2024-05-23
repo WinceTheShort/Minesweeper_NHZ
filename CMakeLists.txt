@@ -96,7 +96,7 @@ add_executable(CMakeSFMLProject src/main.cpp
         src/NumCell.cpp
         src/NumCell.h
         src/NumCell.h)
-target_link_libraries(CMakeSFMLProject PRIVATE sfml-graphics)
+target_link_libraries(CMakeSFMLProject PRIVATE sfml-graphics memtrace)
 target_compile_features(CMakeSFMLProject PRIVATE cxx_std_17)
 
 # Generate warning flags appropriate to the currently used compiler.

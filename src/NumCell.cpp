@@ -3,10 +3,10 @@
 //
 
 #include "NumCell.h"
+#include "memtrace.h"
 
 NumCell::NumCell(sf::Texture *spriteSheet, int x, int y, float gridSize, int value, std::map<std::string, sf::Color>* theme)  : Cell(spriteSheet, x, y, gridSize, theme),
 value(value){
-    type = value;
 }
 
 NumCell::~NumCell() {
@@ -15,7 +15,6 @@ NumCell::~NumCell() {
 
 void NumCell::loadCell(bool revealed, bool flagged, int value){
     this->value = value;
-    this->type = value;
     this->revealed = revealed;
     if (revealed)
         changeSprite(value);
@@ -50,4 +49,14 @@ void NumCell::flag(Board *board) {
             flagged = true;
         }
     }
+}
+
+void NumCell::saveCell(std::ostream* os)
+{
+    *os << value;
+}
+
+int NumCell::isWhat(int what)
+{
+    return what == value ? 1 : 0;
 }

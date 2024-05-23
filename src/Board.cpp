@@ -3,6 +3,7 @@
 //
 
 #include "Board.h"
+#include "memtrace.h"
 
 void Board::initBoard() {
     rng.seed(seedVal); //sets random seed
@@ -94,6 +95,7 @@ void Board::setBoard(sf::Vector2i mousePos) {
 
 }
 
+//New
 Board::Board(Difficulty* diff, float gridSize, sf::View* view, sf::Texture* cellSprites,std::map<std::string, sf::Color>* theme)
 : diff(diff), gridSize(gridSize), view(view), cellSprites(cellSprites), goodFlag(0), badFlag(0), time(0),
 gameOverBool(false), started(false), left(false), theme(theme){
@@ -113,6 +115,7 @@ gameOverBool(false), started(false), left(false), theme(theme){
     initBoard();
 }
 
+//Load
 Board::Board(Difficulty *diff, float gridSize, sf::View *view, sf::Texture *cellSprites, std::map<std::string, sf::Color> *theme, bool load)
 : diff(diff), gridSize(gridSize), view(view), cellSprites(cellSprites), goodFlag(0), badFlag(0),
   gameOverBool(false), started(true), left(false), theme(theme), time(0){
@@ -146,6 +149,11 @@ Board::Board(Difficulty *diff, float gridSize, sf::View *view, sf::Texture *cell
 }
 
 Board::~Board() {
+    for (int i = 0; i < diff->columns; ++i) {
+        for (int j = 0; j < diff->rows; ++j) {
+            delete boardCells[i][j];
+        }
+    }
     for (int i = 0; i < diff->columns; ++i) {
         delete[] boardCells[i];
     }
@@ -197,7 +205,7 @@ int Board::checkSurroundings(int x, int y, int forWhat) {
                 //Special condition for checking flags
                 if (forWhat == FLAG && boardCells[i][j]->getFlagged()) sum++;
                 //Chacks any other types
-                else if (boardCells[i][j]->getType() == forWhat) sum++;
+                else sum += boardCells[i][j]->isWhat(forWhat);
             }
         }
     }
@@ -256,7 +264,8 @@ void Board::saveGame() {
     of << time << " " << diff->columns << " " << diff->rows << " " << diff->bombs << std::endl;
     for (int i = 0; i < diff->columns; ++i) {
         for (int j = 0; j < diff->rows; ++j) {
-            of << boardCells[i][j]->getType() << " " << boardCells[i][j]->getRevealed() << " " << boardCells[i][j]->getFlagged() << std::endl;
+            boardCells[i][j]->saveCell(&of);
+            of<< " " << boardCells[i][j]->getRevealed() << " " << boardCells[i][j]->getFlagged() << std::endl;
         }
     }
     of.close();

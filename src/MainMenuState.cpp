@@ -3,6 +3,7 @@
 //
 
 #include "MainMenuState.h"
+#include "memtrace.h"
 
 void MainMenuState::initFonts() {
     this->font.loadFromFile("../../src/Resources/minepixel.ttf");

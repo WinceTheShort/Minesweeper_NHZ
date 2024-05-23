@@ -3,6 +3,7 @@
 //
 
 #include "CustomDiffState.h"
+#include "memtrace.h"
 
 void CustomState::initFonts() {
     this->font.loadFromFile("../../src/Resources/minepixel.ttf");

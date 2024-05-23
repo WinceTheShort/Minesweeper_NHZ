@@ -3,6 +3,7 @@
 //
 
 #include "State.h"
+#include "memtrace.h"
 
 State::State(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys, std::stack<State*>* states)
     : window(window), supportedKeys(supportedKeys), states(states), quit(false), quitState(false){}

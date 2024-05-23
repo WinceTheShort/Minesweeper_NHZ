@@ -3,10 +3,11 @@
 //
 
 #include "Cell.h"
+#include "memtrace.h"
 
 //CELL
 Cell::Cell(sf::Texture *spriteSheet, int x, int y, float gridSize, std::map<std::string, sf::Color>* theme):
-spriteSheet(spriteSheet), type(0), x(x), y(y), revealed(false), flagged(false), clicked(false), left(0), right(0), theme(theme){
+spriteSheet(spriteSheet), x(x), y(y), revealed(false), flagged(false), clicked(false), left(0), right(0), theme(theme){
     //Initializes the sprite
     sprite.setPosition(x * gridSize,y * gridSize);
     sprite.setSize(sf::Vector2f(gridSize,gridSize));

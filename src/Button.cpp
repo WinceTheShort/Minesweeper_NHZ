@@ -3,6 +3,7 @@
 //
 
 #include "Button.h"
+#include "memtrace.h"
 
 Button::Button(float x, float y, float width, float height,float outlineThickness, float shadowSize,
                std::map<std::string, sf::Color>* theme,
@@ -87,6 +88,10 @@ void Button::update(const sf::Vector2f mousePos) {
 
     //Sets the fill color to the current pressed state
     this->shape.setFillColor(this->theme->at(buttonStateS));
+    textShadow.setFillColor(theme->at("Shadow"));
+    this->shadow.setFillColor(theme->at("Shadow"));
+    this->shadow.setOutlineColor(theme->at("Shadow"));
+
 }
 
 void Button::render(sf::RenderTarget *target) {

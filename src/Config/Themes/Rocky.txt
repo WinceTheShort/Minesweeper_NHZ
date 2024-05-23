@@ -1,0 +1,5 @@
+Rocky
+BtnIdle 211 29 255 255
+BtnHover 159 22 192 255
+BtnActive 104 14 126 255
+Shadow 65 9 79 255

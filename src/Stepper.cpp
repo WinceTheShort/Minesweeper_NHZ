@@ -3,6 +3,7 @@
 //
 
 #include "Stepper.h"
+#include "memtrace.h"
 
 Stepper::Stepper(float x, float y, float width, float height, float outlineThickness, float shadowSize,
                  std::map<std::string, std::map<std::string, sf::Color>> *colorThemes, sf::Font *font, int fontSize, float textShadowSize,
@@ -100,6 +101,9 @@ void Stepper::update(sf::Vector2f mousePos) {
 
     //Updates the steppers color
     shape.setFillColor(colorThemes->at(*activeTheme).at("BtnIdle"));
+    textShadow.setFillColor(this->colorThemes->at(*activeTheme).at("Shadow"));
+    this->shadow.setFillColor(this->colorThemes->at(*activeTheme).at("Shadow"));
+    this->shadow.setOutlineColor(this->colorThemes->at(*activeTheme).at("Shadow"));
 
     //Handles the right arrow button
     if (this->right.getGlobalBounds().contains(mousePos)){
