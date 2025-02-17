@@ -2,10 +2,10 @@
 // Created by Vince on 2024. 04. 30..
 //
 
-#ifndef SFML_NHZ_STATEINTERFACES_HPP
-#define SFML_NHZ_STATEINTERFACES_HPP
+#ifndef Minesweeper_NHZ_STATEINTERFACES_HPP
+#define Minesweeper_NHZ_STATEINTERFACES_HPP
 
-#include "State.h"
+#include "State.hpp"
 
 //Button interface
 class iButton: virtual public State{
@@ -109,4 +109,4 @@ public:
 };
 
 
-#endif //SFML_NHZ_STATEINTERFACES_HPP
+#endif //Minesweeper_NHZ_STATEINTERFACES_HPP

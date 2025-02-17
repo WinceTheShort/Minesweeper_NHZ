@@ -1,7 +1,0 @@
-<map id="Stepper::update" name="Stepper::update">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,119,57"/>
-<area shape="rect" id="Node000002" href="$class_stepper.html#a1bbfba9d969de93f34685b45f24b1592" title="Decrements the stepper." alt="" coords="171,5,292,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,33,156,27,157,33,120,38"/>
-<area shape="rect" id="Node000003" href="$class_stepper.html#ad4bb1a9dd8b6f37a716bc1869adf5b28" title="Increments the stepper." alt="" coords="167,56,296,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="120,50,152,55,151,60,119,55"/>
-</map>

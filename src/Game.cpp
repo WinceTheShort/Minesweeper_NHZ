@@ -2,9 +2,8 @@
 // Created by wince on 2024. 04. 21.
 //
 
-#include "Game.h"
+#include "Game.hpp"
 #include <fstream>
-#include "memtrace.h"
 
 //Init
 
@@ -83,7 +82,14 @@ void Game::initThemes() {
 
     //loads the last used theme
     std::ifstream ifstream("../../src/Config/activeTheme.ini");
-    ifstream >> activeTheme;
+    if (!ifstream.is_open()){
+        std::ofstream activeThemeFile("../../src/Config/activeTheme.ini");
+        activeThemeFile << "Coral";
+        activeThemeFile.close();
+        activeTheme = "Coral";
+    }
+    else
+        ifstream >> activeTheme;
     ifstream.close();
 }
 

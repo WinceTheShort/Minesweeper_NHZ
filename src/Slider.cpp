@@ -3,8 +3,7 @@
 //
 
 #include <cmath>
-#include "Slider.h"
-#include "memtrace.h"
+#include "Slider.hpp"
 
 Slider::Slider(float x, float y, float width, sf::Font *font, const std::string& text, int fontSize,
                std::map<std::string, sf::Color> *theme, int min, int max, float scale)

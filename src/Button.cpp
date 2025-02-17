@@ -2,8 +2,7 @@
 // Created by wince on 2024. 04. 22..
 //
 
-#include "Button.h"
-#include "memtrace.h"
+#include "Button.hpp"
 
 Button::Button(float x, float y, float width, float height,float outlineThickness, float shadowSize,
                std::map<std::string, sf::Color>* theme,

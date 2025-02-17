@@ -1,5 +1,0 @@
-<map id="Board::checkSurroundings" name="Board::checkSurroundings">
-<area shape="rect" id="Node000001" title=" " alt="" coords="165,5,339,32"/>
-<area shape="rect" id="Node000002" href="$class_num_cell.html#a4a700fb9fbaafaeb43923eb732979e32" title=" " alt="" coords="5,5,117,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,21,117,21,117,16,149,16"/>
-</map>

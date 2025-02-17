@@ -1,9 +1,0 @@
-<map id="ZeroCell::flag" name="ZeroCell::flag">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,102,83"/>
-<area shape="rect" id="Node000002" href="$class_cell.html#a6c6a811ec828b4a0ac022578f49f9e1a" title=" " alt="" coords="150,5,277,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,53,154,35,155,40,99,58"/>
-<area shape="rect" id="Node000003" href="$class_board.html#aded6337bf65cab572cfa43998ff47ad9" title=" " alt="" coords="161,56,266,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="102,67,146,67,146,72,102,72"/>
-<area shape="rect" id="Node000004" href="$class_board.html#a119be0d6b6c6bd5448a1249aebd3426b" title=" " alt="" coords="154,107,273,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="99,81,155,99,154,104,97,86"/>
-</map>

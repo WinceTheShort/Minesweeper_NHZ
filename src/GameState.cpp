@@ -2,8 +2,7 @@
 // Created by wince on 2024. 04. 22.
 //
 
-#include "GameState.h"
-#include "memtrace.h"
+#include "GameState.hpp"
 
 void GameState::initFonts() {
     this->font.loadFromFile("../../src/Resources/minepixel.ttf");

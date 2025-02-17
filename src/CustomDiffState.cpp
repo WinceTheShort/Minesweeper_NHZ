@@ -2,8 +2,7 @@
 // Created by wince on 2024. 04. 27..
 //
 
-#include "CustomDiffState.h"
-#include "memtrace.h"
+#include "CustomDiffState.hpp"
 
 void CustomState::initFonts() {
     this->font.loadFromFile("../../src/Resources/minepixel.ttf");

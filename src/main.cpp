@@ -1,6 +1,5 @@
-#include "Game.h"
-#include "gtest_lite.h"
-#include "memtrace.h"
+#include "Game.hpp"
+#include "gtest_lite.hpp"
 
 
 int main()

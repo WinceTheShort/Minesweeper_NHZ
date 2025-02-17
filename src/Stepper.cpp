@@ -2,8 +2,7 @@
 // Created by wince on 2024. 05. 16..
 //
 
-#include "Stepper.h"
-#include "memtrace.h"
+#include "Stepper.hpp"
 
 Stepper::Stepper(float x, float y, float width, float height, float outlineThickness, float shadowSize,
                  std::map<std::string, std::map<std::string, sf::Color>> *colorThemes, sf::Font *font, int fontSize, float textShadowSize,

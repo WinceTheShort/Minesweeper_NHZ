@@ -2,8 +2,7 @@
 // Created by wince on 2024. 05. 05..
 //
 
-#include "Board.h"
-#include "memtrace.h"
+#include "Board.hpp"
 
 void Board::initBoard() {
     rng.seed(seedVal); //sets random seed

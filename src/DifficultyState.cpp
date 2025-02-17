@@ -2,8 +2,7 @@
 // Created by wince on 2024. 04. 24..
 //
 
-#include "DifficultyState.h"
-#include "memtrace.h"
+#include "DifficultyState.hpp"
 
 void DifficultyState::initFonts() {
     this->font.loadFromFile("../../src/Resources/minepixel.ttf");

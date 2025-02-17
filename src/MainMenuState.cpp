@@ -2,8 +2,7 @@
 // Created by wince on 2024. 04. 21..
 //
 
-#include "MainMenuState.h"
-#include "memtrace.h"
+#include "MainMenuState.hpp"
 
 void MainMenuState::initFonts() {
     this->font.loadFromFile("../../src/Resources/minepixel.ttf");

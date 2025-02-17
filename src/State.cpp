@@ -2,8 +2,7 @@
 // Created by wince on 2024. 04. 21..
 //
 
-#include "State.h"
-#include "memtrace.h"
+#include "State.hpp"
 
 State::State(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys, std::stack<State*>* states)
     : window(window), supportedKeys(supportedKeys), states(states), quit(false), quitState(false){}

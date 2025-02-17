@@ -2,8 +2,7 @@
 // Created by wince on 2024. 05. 05..
 //
 
-#include "Cell.h"
-#include "memtrace.h"
+#include "Cell.hpp"
 
 //CELL
 Cell::Cell(sf::Texture *spriteSheet, int x, int y, float gridSize, std::map<std::string, sf::Color>* theme):

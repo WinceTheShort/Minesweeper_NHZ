@@ -1,5 +1,0 @@
-<map id="Board::drawBoard" name="Board::drawBoard">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,130,32"/>
-<area shape="rect" id="Node000002" href="$class_cell.html#a8670f7a9554fb177f79a315d1a4bd369" title=" " alt="" coords="178,5,278,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,16,162,16,162,21,130,21"/>
-</map>

@@ -1,9 +1,0 @@
-<map id="Board::checkWinCondition" name="Board::checkWinCondition">
-<area shape="rect" id="Node000001" title=" " alt="" coords="687,5,863,32"/>
-<area shape="rect" id="Node000002" href="$class_game_state.html#ad0d4f314f103697df367999942230c9c" title="Checks if the end game conditions are met and sets the win and end bool accordingly." alt="" coords="397,5,639,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="672,21,640,21,640,16,672,16"/>
-<area shape="rect" id="Node000003" href="$class_game_state.html#a404b264fb0a1bf4231f16f8d2cdc4506" title=" " alt="" coords="188,5,349,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="381,21,349,21,349,16,381,16"/>
-<area shape="rect" id="Node000004" href="$class_game_state.html#a7f853d3fd771d00495f20afa8d47ad34" title=" " alt="" coords="5,5,140,32"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="172,21,140,21,140,16,172,16"/>
-</map>

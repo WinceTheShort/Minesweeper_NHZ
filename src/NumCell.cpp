@@ -2,8 +2,7 @@
 // Created by wince on 2024. 05. 22..
 //
 
-#include "NumCell.h"
-#include "memtrace.h"
+#include "NumCell.hpp"
 
 NumCell::NumCell(sf::Texture *spriteSheet, int x, int y, float gridSize, int value, std::map<std::string, sf::Color>* theme)  : Cell(spriteSheet, x, y, gridSize, theme),
 value(value){
